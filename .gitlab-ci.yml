@@ -1,0 +1,109 @@
+# GitLab CI/CD configuration for Synthwave Notes
+# This pipeline builds and deploys the site to GitLab Pages
+
+stages:
+  - build
+  - deploy
+
+variables:
+  NODE_VERSION: "18"
+  # Disable git shallow clone for better caching
+  GIT_DEPTH: 0
+
+# Cache node_modules between pipelines for faster builds
+.cache_config: &cache_config
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - node_modules/
+  policy: pull-push
+
+# Build job - creates the site
+build:
+  stage: build
+  image: node:${NODE_VERSION}-alpine
+  cache:
+    <<: *cache_config
+  before_script:
+    - echo "🔨 Starting build process..."
+    - node --version
+    - npm --version
+  script:
+    # Install dependencies (uses cache if available)
+    - npm ci --prefer-offline --no-audit --no-fund
+    
+    # Run the build
+    - echo "📦 Building site..."
+    - npm run build
+    
+    # Create public directory for GitLab Pages (REQUIRED)
+    - mkdir -p public
+    
+    # Copy generated index.html to public directory
+    - cp index.html public/
+    
+    # Create a 404 page (same as index for single-page app)
+    - cp index.html public/404.html
+    
+    # Verify build output
+    - echo "✅ Build complete! Files in public directory:"
+    - ls -la public/
+    - echo "📊 File size:"
+    - du -h public/index.html
+  artifacts:
+    name: "site-build-$CI_COMMIT_SHORT_SHA"
+    paths:
+      - public
+    # IMPORTANT: expire_in for build artifacts
+    # This artifact is passed to the pages job
+    # 1 hour is sufficient since pages job runs immediately after
+    expire_in: 1 hour
+  only:
+    # Run on main/master branches and merge requests
+    - main
+    - master
+    - merge_requests
+
+# Deploy to GitLab Pages - MUST be named "pages"
+pages:
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - echo "🚀 Deploying to GitLab Pages..."
+    - echo "📍 URL will be: https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/"
+  artifacts:
+    paths:
+      - public
+    # IMPORTANT: expire_in for GitLab Pages
+    # This controls how long GitLab keeps your deployed site
+    # Set to 30 days, 1 year, or never
+    # Recommendation: never (for production sites)
+    expire_in: never
+  only:
+    # Only deploy from main/master branch
+    - main
+    - master
+  environment:
+    name: production
+    url: https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME/
+
+# Test job for merge requests (doesn't deploy)
+test:
+  stage: build
+  image: node:${NODE_VERSION}-alpine
+  cache:
+    <<: *cache_config
+    policy: pull
+  script:
+    - echo "🧪 Testing build for merge request..."
+    - npm ci --prefer-offline --no-audit --no-fund
+    - npm run build
+    - echo "✅ Build successful - ready to merge!"
+    - du -h index.html
+  only:
+    - merge_requests
+  except:
+    - main
+    - master
