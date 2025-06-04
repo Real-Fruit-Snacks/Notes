@@ -1,0 +1,76 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create release package
+        run: |
+          chmod +x create-release.sh
+          ./create-release.sh
+
+      - name: Get version
+        id: version
+        run: echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Notes v${{ steps.version.outputs.VERSION }}
+          tag_name: v${{ steps.version.outputs.VERSION }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: |
+            release/notes-v${{ steps.version.outputs.VERSION }}.tar.gz
+            release/notes-v${{ steps.version.outputs.VERSION }}-standalone.html
+          body: |
+            ## 📝 Notes v${{ steps.version.outputs.VERSION }}
+            
+            ### 📦 Downloads
+            
+            - **Full Package** (`notes-v${{ steps.version.outputs.VERSION }}.tar.gz`): Complete application with source code, build system, and documentation
+            - **Standalone HTML** (`notes-v${{ steps.version.outputs.VERSION }}-standalone.html`): Pre-built, ready-to-use single HTML file
+            
+            ### 🚀 Quick Start
+            
+            #### Option 1: Use Standalone HTML (Easiest)
+            1. Download `notes-v${{ steps.version.outputs.VERSION }}-standalone.html`
+            2. Open in your browser
+            3. That's it! 🎉
+            
+            #### Option 2: Full Installation
+            1. Download and extract the tar.gz file
+            2. Run `./quick-start.sh`
+            3. Open `index.html` in your browser
+            
+            ### ✨ Features
+            - Zero runtime dependencies
+            - Dark/Light mode
+            - Full-text search
+            - Collapsible code blocks with titles
+            - Tag filtering
+            - Self-contained single file output
+            
+            See the [README](https://github.com/${{ github.repository }}/blob/main/README.md) for full documentation.

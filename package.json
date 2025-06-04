@@ -1,17 +1,18 @@
 {
-  "name": "synthwave-notes",
+  "name": "notes",
   "version": "2.0.0",
-  "description": "A zero-external-dependency synthwave-themed personal notes website with build system",
+  "description": "A zero-external-dependency personal notes website with build system",
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
     "build:public": "node build.js && mkdir -p public && cp index.html public/",
     "watch": "nodemon --watch notes --ext md --exec npm run build",
     "serve": "npm run build && npx http-server -p 8080 -o",
-    "serve:public": "npm run build:public && npx http-server public -p 8080 -o"
+    "serve:public": "npm run build:public && npx http-server public -p 8080 -o",
+    "release": "./create-release.sh",
+    "release:windows": "bash create-release.sh"
   },
   "keywords": [
-    "synthwave",
     "notes",
     "static-site",
     "gitlab-pages"

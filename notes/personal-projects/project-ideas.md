@@ -8,7 +8,7 @@ order: 2
 
 Brainstorming and planning for future projects.
 
-## Synthwave Music Visualizer
+## Music Visualizer
 
 ### Project Overview
 

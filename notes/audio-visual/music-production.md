@@ -6,7 +6,7 @@ order: 1
 
 # Music Production
 
-Welcome to my collection of music production notes, tips, and techniques gathered from years of creating synthwave and electronic music.
+Welcome to my collection of music production notes, tips, and techniques gathered from years of creating electronic music.
 
 ## DAW Setup & Configuration
 

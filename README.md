@@ -1,6 +1,6 @@
-# 🌆 Synthwave Notes v2.0
+# 📝 Notes v2.0
 
-A self-contained, synthwave-themed personal knowledge base with advanced features. Zero external dependencies at runtime - everything compiles into a single HTML file!
+A self-contained personal knowledge base with advanced features. Zero external dependencies at runtime - everything compiles into a single HTML file!
 
 ![Version](https://img.shields.io/badge/Version-2.0-ff0080?style=for-the-badge)
 ![Zero Runtime Dependencies](https://img.shields.io/badge/Runtime_Dependencies-Zero-00ffff?style=for-the-badge)
@@ -221,7 +221,7 @@ Serves on `http://localhost:8080`
 
 ### File Structure
 ```
-synthwave-notes/
+notes/
 ├── build.js              # Build script
 ├── template-enhanced.html # HTML/CSS/JS template
 ├── notes/                # Your markdown files

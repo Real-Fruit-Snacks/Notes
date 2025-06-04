@@ -1,6 +1,6 @@
 # GitLab Pages Setup Guide
 
-This guide ensures your Synthwave Notes app deploys correctly to GitLab Pages.
+This guide ensures your Notes app deploys correctly to GitLab Pages.
 
 ## 📋 Prerequisites
 
@@ -14,8 +14,8 @@ This guide ensures your Synthwave Notes app deploys correctly to GitLab Pages.
 
 ```bash
 # Clone your new repository
-git clone https://gitlab.com/YOUR_USERNAME/synthwave-notes.git
-cd synthwave-notes
+git clone https://gitlab.com/YOUR_USERNAME/notes.git
+cd notes
 
 # Copy all files from this project
 # Add all files
@@ -39,7 +39,7 @@ After pushing, GitLab CI/CD will:
 
 Your site will be available at:
 ```
-https://YOUR_USERNAME.gitlab.io/synthwave-notes/
+https://YOUR_USERNAME.gitlab.io/notes/
 ```
 
 ## 📝 Understanding expire_in

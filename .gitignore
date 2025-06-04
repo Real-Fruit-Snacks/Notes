@@ -40,11 +40,13 @@ yarn-error.log*
 *.backup
 *.old
 
-# Archives
+# Archives (except our releases)
 *.zip
-*.tar.gz
 *.rar
 *.7z
+
+# Release directory (contains our generated archives)
+release/
 
 # Node.js
 node_modules/

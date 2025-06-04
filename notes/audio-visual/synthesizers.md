@@ -8,7 +8,7 @@ order: 2
 
 My personal collection of synthesizer patches, programming techniques, and hardware notes.
 
-## Classic Synthwave Bass
+## Classic Bass Sound
 
 ### Serum Patch
 
