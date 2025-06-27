@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+notes-wiki-*.zip
+notes-wiki-*.tar.gz
+public/
+
+# Development
+*.log
+*.tmp
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# GitLab files (maintained separately for releases)
+.gitlab-ci.yml
+GITLAB-DEPLOYMENT.md
+gitlab-files/
+
+# Local overrides
+*.local.*
+local/

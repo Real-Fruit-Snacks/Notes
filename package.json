@@ -1,0 +1,29 @@
+{
+  "name": "notes-wiki",
+  "version": "4.0.6",
+  "description": "Self-contained offline wiki with 150+ themes, multi-tab interface, and advanced search",
+  "main": "script.js",
+  "scripts": {
+    "test": "node test-puppeteer.js",
+    "test:debug": "node test-puppeteer.js --debug",
+    "build": "python3 build.py",
+    "serve": "python3 -m http.server 8000",
+    "validate": "node -c script.js",
+    "validate-themes": "node validate-themes.js",
+    "validate-all": "npm run validate && npm run validate-themes",
+    "package": "npm run validate && npm run build && node create-release.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.10.2"
+  },
+  "keywords": [
+    "wiki",
+    "notes",
+    "knowledge-management",
+    "markdown",
+    "search",
+    "personal"
+  ],
+  "author": "Notes Wiki Team",
+  "license": "MIT"
+}
