@@ -3,13 +3,13 @@ title: Theme System Guide
 tags: [themes, customization, styling, interface, preferences]
 created: 2025-01-06
 author: Wiki Admin
-description: Complete guide to the 150+ professional themes, favorites system, and customization options
+description: Complete guide to the 74+ professional themes, favorites system, and customization options
 updated: 2025-06-24
 ---
 
 # Theme System Guide
 
-Master the Notes Wiki's powerful theme system with **150+ professional themes** organized in 11 categories, theme favorites, and advanced customization options.
+Master the Notes Wiki's powerful theme system with **74+ professional themes** organized in 11 categories, theme favorites, and advanced customization options.
 
 ## 🎨 Theme Basics
 
@@ -50,7 +50,7 @@ Master the Notes Wiki's powerful theme system with **150+ professional themes** 
 | **Add/Remove Favorites** | Toggle favorite status with star indicator |
 | **Preview Theme** | Temporary preview with automatic revert |
 
-## 📱 Complete Theme Collection (150+ Themes)
+## 📱 Complete Theme Collection (74+ Themes)
 
 ### ✨ Classic Themes
 - **Light** - Clean, minimal light theme for daytime reading
@@ -935,13 +935,6 @@ When testing themes, pay attention to:
 7. **Selection Colors** - Text selection should be visible and pleasant
 8. **Scrollbars** - Custom scrollbar styling should match the theme
 
-### 🌿 Bearded Theme Collection
-- **Complete 76-theme Bearded Collection** including:
-  - Arc, Black & Color variants, Coffee, Earth, Milkshake series
-  - Monokai variants, Oceanic, Vivid series
-  - High contrast (HC) themes, Featured collaborations
-  - Light variants, Stained series, Surprising series
-
 ## 🛠️ Theme Customization
 
 ### Auto Theme Detection
@@ -957,7 +950,7 @@ When testing themes, pay attention to:
 ## ⚙️ Advanced Features
 
 ### Quick Theme Actions
-- **Random theme** - Apply a random theme from all 150+
+- **Random theme** - Apply a random theme from all 74+
 - **Category filtering** - Browse themes by category
 - **Search themes** - Find themes by name or description
 
@@ -982,7 +975,7 @@ When testing themes, pay attention to:
 
 ## 🎯 Theme Categories Overview
 
-The 150+ themes are organized into **11 main categories**:
+The 74+ themes are organized into **11 main categories**:
 
 1. **Classic Dark** (8 themes) - Traditional dark themes
 2. **Classic Light** (5 themes) - Clean light themes  
@@ -1000,7 +993,7 @@ The 150+ themes are organized into **11 main categories**:
 
 The Notes Wiki theme system provides:
 
-- ✅ **150+ professional themes** in 11 organized categories
+- ✅ **74+ professional themes** in 11 organized categories
 - ✅ **Theme favorites system** with star indicators
 - ✅ **Right-click context menus** for quick theme actions
 - ✅ **Live preview on hover** without disrupting workflow
