@@ -1601,20 +1601,20 @@ class NotesWiki {
                 const pressedCombo = this.getKeyCombo(e);
                 
                 // Override Ctrl+F for in-note search
-                if (pressedCombo === 'Ctrl+F' || pressedCombo === 'Cmd+F') {
-                    e.preventDefault();
-                    // Don't open search if another modal is already open
-                    const hasOpenModal = document.querySelector('.settings-modal.active, .tags-modal.active, .shortcuts-modal.active');
-                    if (hasOpenModal) return;
-                    
-                    // If note is loaded, show in-note search; otherwise show global search
-                    if (this.currentNote) {
-                        this.showNoteSearch();
-                    } else {
-                        this.showSearch();
-                    }
-                    return;
-                }
+                // if (pressedCombo === 'Ctrl+F' || pressedCombo === 'Cmd+F') {
+                //     e.preventDefault();
+                //     // Don't open search if another modal is already open
+                //     const hasOpenModal = document.querySelector('.settings-modal.active, .tags-modal.active, .shortcuts-modal.active');
+                //     if (hasOpenModal) return;
+                //     
+                //     // If note is loaded, show in-note search; otherwise show global search
+                //     if (this.currentNote) {
+                //         this.showNoteSearch();
+                //     } else {
+                //         this.showSearch();
+                //     }
+                //     return;
+                // }
                 
                 // Alternative tab management shortcuts (browser-compatible)
                 if (pressedCombo === 'Alt+W') {
