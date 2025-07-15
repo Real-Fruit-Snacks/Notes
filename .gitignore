@@ -1,0 +1,74 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs and releases
+notes-wiki-*.zip
+notes-wiki-*.tar.gz
+notes-wiki-*.tgz
+public/
+dist/
+build/
+
+# Generated files
+# notes-index.json  # Needed for GitHub Pages deployment
+
+# Development and testing
+*.log
+*.tmp
+.env
+.env.*
+coverage/
+.nyc_output/
+test-results/
+screenshots/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+.atom/
+.brackets.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+.env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# GitLab files (maintained separately for releases)
+.gitlab-ci.yml
+GITLAB-DEPLOYMENT.md
+gitlab-files/
+
+# Local overrides and temporary files
+*.local.*
+local/
+.cache/
+.temp/
+temp/
+
+# Development artifacts
+*.backup
+*.orig
