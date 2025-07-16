@@ -72,3 +72,16 @@ temp/
 # Development artifacts
 *.backup
 *.orig
+
+# Obsidian and other note-taking app files
+.obsidian/
+.trash/
+
+# GitHub specific
+.github/workflows/
+.github/actions/
+
+# Temporary and cache directories
+.cache/
+.temp/
+temp/
