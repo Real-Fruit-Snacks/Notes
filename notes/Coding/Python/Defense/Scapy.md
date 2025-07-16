@@ -5,6 +5,7 @@ tags:
   - python
 created: 2025-07-15
 description: Scapy is an extensive packet crafting module created by Philippe Biondi.
+author: M West
 ---
 
 ```bash

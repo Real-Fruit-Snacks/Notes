@@ -4,6 +4,7 @@ tags:
   - python
   - pywars
 created: 2024-07-15
+author: M West
 ---
 
 ## Setup

@@ -1,10 +1,6 @@
 {
   "recentFiles": [
     {
-      "basename": "index",
-      "path": "notes/index.md"
-    },
-    {
       "basename": "Scapy",
       "path": "notes/Coding/Python/Defense/Scapy.md"
     },
@@ -15,6 +11,10 @@
     {
       "basename": "Pywars",
       "path": "notes/Coding/Python/Pywars.md"
+    },
+    {
+      "basename": "index",
+      "path": "notes/index.md"
     },
     {
       "basename": "scapy",

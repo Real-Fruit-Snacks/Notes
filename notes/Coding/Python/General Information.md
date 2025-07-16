@@ -3,6 +3,7 @@ title: General Information
 tags:
   - python
 created: 2025-07-15
+author: M West
 ---
 
 ## What is Python?
