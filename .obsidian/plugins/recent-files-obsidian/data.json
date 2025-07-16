@@ -5,12 +5,12 @@
       "path": "notes/Coding/Python/Defense/Scapy.md"
     },
     {
-      "basename": "Pywars",
-      "path": "notes/Coding/Python/Pywars.md"
-    },
-    {
       "basename": "General Information",
       "path": "notes/Coding/Python/General Information.md"
+    },
+    {
+      "basename": "Pywars",
+      "path": "notes/Coding/Python/Pywars.md"
     },
     {
       "basename": "variable-examples-data-analysis",

@@ -1,9 +1,9 @@
 ---
 title: Pywars
-created: 2024-07-15
 tags:
   - python
   - pywars
+created: 2024-07-15
 ---
 
 ## Setup

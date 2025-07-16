@@ -3,6 +3,6 @@
   "trashOption": "local",
   "alwaysUpdateLinks": true,
   "newFileLocation": "current",
-  "showUnsupportedFiles": false,
+  "showUnsupportedFiles": true,
   "attachmentFolderPath": "Attachments"
 }

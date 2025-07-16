@@ -96,7 +96,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 345.5
   },
   "right": {
     "id": "a60215fdf86b9490",
@@ -200,8 +200,8 @@
   "lastOpenFiles": [
     "notes/Coding/Python/Pywars.md",
     "notes/Coding/Python/General Information.md",
-    "notes/Coding/Python/Defense/Scapy.md",
     "notes/examples/variable-examples-data-analysis.md",
+    "notes/Coding/Python/Defense/Scapy.md",
     "notes/Coding/Python/Forensics",
     "notes/Coding/Python/Offense",
     "notes/Coding/Python/Defense",
