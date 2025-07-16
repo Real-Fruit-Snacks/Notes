@@ -11,10 +11,14 @@
             "id": "17441a73931eeac5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "notes/Coding/Python/Defense/Scapy.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Scapy"
             }
           }
         ]
@@ -192,11 +196,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1188d40be0f2ddc9",
+  "active": "17441a73931eeac5",
   "lastOpenFiles": [
-    "notes/Coding/Python/General Information.md",
-    "notes/Coding/Python/Pywars.md",
     "notes/index.md",
+    "notes/Coding/Python/Pywars.md",
+    "notes/Coding/Python/General Information.md",
     "notes/Coding/Python/Defense/Scapy.md",
     "notes/examples/variable-examples-data-analysis.md",
     "notes/Coding/Python/Forensics",

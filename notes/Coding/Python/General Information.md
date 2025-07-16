@@ -9,10 +9,10 @@ author: M West
 ## What is Python?
 
 - Python is an interpreted language.
-      - Top-down, just-in-time interpretation of source code.
+    - Top-down, just-in-time interpretation of source code.
 - A `.py` file is Python source code in its uncompressed format.
 - A `.pyc` file is Python byte code. These files are no longer human readable.
-      - Python automatically creates a byte-compiled `.pyc` file when a `.py` is imported. If you want to manually byte-compile a `.py` into a `.pyc` with the `py_compile` module with:
+    - Python automatically creates a byte-compiled `.pyc` file when a `.py` is imported. If you want to manually byte-compile a `.py` into a `.pyc` with the `py_compile` module with:
 
 ```python
 >>> import py_compile
@@ -257,10 +257,10 @@ astr = "First {} Second {} Third {}".format('X',2,num)
 ### Slicing Strings
 
 - `[!!code|Syntax|var(--color-red-rgb)]` `String[start:end:step]`
-      - Start, end, and step are all optional
-      - Offset begins at zero
-      - The "end" character is not included in the result
-      - Negative numbers start from the end of the string and work back
+	- Start, end, and step are all optional
+	- Offset begins at zero
+	- The "end" character is not included in the result
+	- Negative numbers start from the end of the string and work back
 - Number before first colon: Is always the start
 - Number after the first: Is always the (up to but not including) end
 - Number after the second: Is always the step
@@ -281,14 +281,14 @@ print("Python rocks"[:6][::-1])
 
 ## Logical Operators
 
-| Operator  | Name                      | Example   |
-| --------- | ------------------------- | --------- |
-| `<`       | Less Than                 | i < 100   |
-| `<=`      | Less Than or Equal to     | 1 <= 100  |
-| `>`       | Greater Than              | i > 100   |
-| `>=`      | Greater Than or Equal to  | i >= 100  |
-| `==`      | Equal                     | i == 100  |
-| `!=`      | Inequality                | i != 100  |
+| Operator | Name                     | Example   |
+| :------: | ------------------------ | --------- |
+|   `<`    | Less Than                | i < 100   |
+|   `<=`   | Less Than or Equal to    | 1 <= 100  |
+|   `>`    | Greater Than             | i > 100   |
+|   `>=`   | Greater Than or Equal to | i >= 100  |
+|  `==`    | Equal                    | i == 100  |
+|   `!=`   | Inequality               | i != 100  |
 
 ### Logic Truth Tables: AND
 
@@ -362,8 +362,8 @@ Python’s PDB debugger is a full featured debugger that is already installed on
 - Add "import pdb; pdb.set_trace()" does the same thing in python < 3.7
 - Start the program in debug mode with "python –m pdb <[script.py](http://script.py)>"
 - Debug after a crash by typing these commands:
-      - Launching an interactive shell after it crashes " python -i <[script.py](http://script.py)> "
-      - Once it crashes and you're in interactive mode, type " import pdb; [pdb.pm](http://pdb.pm)()
+	- Launching an interactive shell after it crashes " python -i <[script.py](http://script.py)> "
+	- Once it crashes and you're in interactive mode, type " import pdb; [pdb.pm](http://pdb.pm)()
 
 ---
 
@@ -511,9 +511,9 @@ Lists are an indexed group of objects.
 - Define with square brackets `[]`
 - Empty List = `[]`, `list()`
 - List of Names = `['Alice', 'Bob', 'Eve']`
-  Elements in the list are addressed based on their index in the list
+	- Elements in the list are addressed based on their index in the list
 - First item in the list of names, `list_of_names[0]`
-      - Items in lists can contain a number, string, or any Python object, including other lists
+	- Items in lists can contain a number, string, or any Python object, including other lists
 - Items in the list can be overwritten (it is mutable)
 
 ### List Elements
@@ -532,7 +532,7 @@ newlist[3]="D"
 - `list[index] = value`: Change an existing value
 - `append(value)`: Add an object to the end of the list
 - `insert(position, value)`: Insert the value at the given position in the list.
-      - Position is a positive or negative number
+	- Position is a positive or negative number
 - `remove(value)`: Remove the first matching item by its value
 - `sort(key,direction)`: Sort the elements of the list
 - `count(value)`: Count occurrences of an item in the list
@@ -608,7 +608,7 @@ Grail', 'Meaning of Life']
 ### Convert Lists to Strings with .join()
 
 - The string `.join()` method can convert a list of strings to a string.
-      - **Note**: The list must contain only strings
+	- **Note**: The list must contain only strings
 - The string whose method is being called is used as a separator between each element in the list
 - A "" (null) or " " (space) string is often used to seamlessly join list elements together into a new string
 
@@ -697,8 +697,7 @@ while x:
 
 ## While Loops
 
-- While loops are useful when you must continue a loop until a task is
-    finished
+- While loops are useful when you must continue a loop until a task is finished
 - For loops have a definitive end; while loops do not
 - A while loop is repeated for as long as `<logic expression>` is True or until a break statement is reached
 
@@ -779,9 +778,9 @@ movie = ("Meaning of Life","R")
 ## Dictionary
 
 - Lists are automatically indexed with an integer
-      - list1=['a','b','c'] so list1[0]='a'
+	- list1=['a','b','c'] so list1[0]='a'
 - With dictionaries, you specify a "key" as the index
-      - dict1={'first':'a','second':'b','third':'c'} so dict1['first']='a'
+	- dict1={'first':'a','second':'b','third':'c'} so dict1['first']='a'
 - Key can be an integer, string, or most any other Python object
 - Data can be integers, strings, or any other Python object, including lists or other dictionaries
 - Dictionaries are very fast at storing and retrieving data

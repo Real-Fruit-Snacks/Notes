@@ -5,16 +5,16 @@
       "path": "notes/Coding/Python/Defense/Scapy.md"
     },
     {
-      "basename": "General Information",
-      "path": "notes/Coding/Python/General Information.md"
+      "basename": "index",
+      "path": "notes/index.md"
     },
     {
       "basename": "Pywars",
       "path": "notes/Coding/Python/Pywars.md"
     },
     {
-      "basename": "index",
-      "path": "notes/index.md"
+      "basename": "General Information",
+      "path": "notes/Coding/Python/General Information.md"
     },
     {
       "basename": "scapy",

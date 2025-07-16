@@ -18,9 +18,9 @@ pip install scapy
 ### rdpcap() and wrpcap() Methods
 
 - **wrpcap(filename,packetlist)** will write a PacketList to a pcap file
-      - `wrpcap("newpacketcapture.pcap", PacketList2write)`
+    - `wrpcap("newpacketcapture.pcap", PacketList2write)`
 - **rdpcap(filename [, #])** will read a file containing pcaps into a scapy.PacketList Data structure
-      - `packetlist=rdpcap("apacketcapture.pcap")`
+    - `packetlist=rdpcap("apacketcapture.pcap")`
 - **sniff()** can also be used to capture live packets or read from a pcap
 - Use **sniff()** to capture all packets filtered by a filterer() until some event determined by stopper() and pass them to the function analyze()
       • `sniff(iface="eth0", store=0, lfilter=filterer, prn=analyze, stop_filter=stopper)`
