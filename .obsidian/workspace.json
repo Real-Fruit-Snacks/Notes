@@ -196,11 +196,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f5bee28ecab57d88",
+  "active": "17441a73931eeac5",
   "lastOpenFiles": [
+    "notes/index.md",
+    "README.md",
     "notes/Coding/Python/General Information.md",
     "notes/Coding/Python/Defense/Scapy.md",
-    "notes/index.md",
     "notes/Coding/Python/Pywars.md",
     "notes/examples/variable-examples-data-analysis.md",
     "notes/Coding/Python/Forensics",

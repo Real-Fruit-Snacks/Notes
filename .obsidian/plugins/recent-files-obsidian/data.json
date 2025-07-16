@@ -5,16 +5,16 @@
       "path": "README.md"
     },
     {
+      "basename": "index",
+      "path": "notes/index.md"
+    },
+    {
       "basename": "General Information",
       "path": "notes/Coding/Python/General Information.md"
     },
     {
       "basename": "Scapy",
       "path": "notes/Coding/Python/Defense/Scapy.md"
-    },
-    {
-      "basename": "index",
-      "path": "notes/index.md"
     },
     {
       "basename": "Pywars",
