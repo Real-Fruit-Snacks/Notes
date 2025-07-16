@@ -11,10 +11,14 @@
             "id": "d93602a68436686f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "notes/Coding/Python/Defense/Scapy.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Scapy"
             }
           }
         ]
@@ -194,6 +198,15 @@
   },
   "active": "d93602a68436686f",
   "lastOpenFiles": [
+    "notes/Coding/Python/Pywars.md",
+    "notes/Coding/Python/General Information.md",
+    "notes/Coding/Python/Defense/Scapy.md",
+    "notes/examples/variable-examples-data-analysis.md",
+    "notes/Coding/Python/Forensics",
+    "notes/Coding/Python/Offense",
+    "notes/Coding/Python/Defense",
+    "notes/Coding/Python",
+    "notes/Coding",
     "Coding/Python/General Information.md",
     "Coding/Python/Defense/scapy.md",
     "Coding/Python/Pywars.md",
@@ -205,13 +218,8 @@
     "Playbooks",
     "Capture The Flag",
     "Attachments/Untitled 1.md",
-    "Coding/Python",
-    "Coding",
     "Attachments/Untitled.md",
     "Untitled 4/Untitled 5/Untitled 6/a.md",
-    "Attachments",
-    "Untitled 2",
-    "Welcome.md",
-    "Untitled 4/Untitled 5/Untitled 6"
+    "Welcome.md"
   ]
 }

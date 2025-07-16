@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "Scapy",
+      "path": "notes/Coding/Python/Defense/Scapy.md"
+    },
+    {
+      "basename": "Pywars",
+      "path": "notes/Coding/Python/Pywars.md"
+    },
+    {
+      "basename": "General Information",
+      "path": "notes/Coding/Python/General Information.md"
+    },
+    {
+      "basename": "variable-examples-data-analysis",
+      "path": "notes/examples/variable-examples-data-analysis.md"
+    },
+    {
       "basename": "scapy",
       "path": "Coding/Python/Defense/scapy.md"
     },
