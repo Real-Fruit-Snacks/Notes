@@ -1,0 +1,10 @@
+{
+  "hidden": true,
+  "hiddenList": [
+    "__pycache__",
+    "fonts",
+    "libs",
+    "node_modules",
+    "themes"
+  ]
+}
