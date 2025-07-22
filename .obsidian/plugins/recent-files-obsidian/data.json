@@ -1,0 +1,44 @@
+{
+  "recentFiles": [
+    {
+      "basename": "Syntax",
+      "path": "notes/Coding/Python/Syntax.md"
+    },
+    {
+      "basename": "Pywars",
+      "path": "notes/Coding/Python/Pywars.md"
+    },
+    {
+      "basename": "index",
+      "path": "notes/index.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "Scapy",
+      "path": "notes/Coding/Python/Defense/Scapy.md"
+    },
+    {
+      "basename": "scapy",
+      "path": "Coding/Python/Defense/scapy.md"
+    },
+    {
+      "basename": "General Information",
+      "path": "Coding/Python/General Information.md"
+    },
+    {
+      "basename": "Pywars",
+      "path": "Coding/Python/Pywars.md"
+    },
+    {
+      "basename": "Automated Defense",
+      "path": "Coding/Python/Automated Defense.md"
+    }
+  ],
+  "omittedPaths": [],
+  "omittedTags": [],
+  "updateOn": "file-open",
+  "omitBookmarks": false
+}
