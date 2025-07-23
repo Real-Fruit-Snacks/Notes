@@ -2,6 +2,14 @@
   "recentFiles": [
     {
       "basename": "Syntax",
+      "path": "Coding/Python/Syntax.md"
+    },
+    {
+      "basename": "Pywars",
+      "path": "Coding/Python/Pywars.md"
+    },
+    {
+      "basename": "Syntax",
       "path": "notes/Coding/Python/Syntax.md"
     },
     {
@@ -27,10 +35,6 @@
     {
       "basename": "General Information",
       "path": "Coding/Python/General Information.md"
-    },
-    {
-      "basename": "Pywars",
-      "path": "Coding/Python/Pywars.md"
     },
     {
       "basename": "Automated Defense",

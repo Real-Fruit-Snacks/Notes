@@ -1,12 +1,4 @@
 {
   "hidden": true,
-  "hiddenList": [
-    "__pycache__",
-    "fonts",
-    "libs",
-    "node_modules",
-    "themes",
-    "README.md",
-    "notes/index.md"
-  ]
+  "hiddenList": []
 }

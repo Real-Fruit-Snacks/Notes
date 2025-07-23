@@ -3,7 +3,6 @@ tags:
   - python
 ---
 
-
 ## What is Python??
 
 - Python is an interpreted language.
@@ -24,6 +23,11 @@ tags:
 - On Linux, multiple versions can coexist on the same computer, but 'python' only points to one in your path.
 - `/usr/bin/env python3` launches Python3 based on the PATH environment variable
 
+Check Version:
+```bash
+python -V
+```
+
 ### PEPs: Python Enhancement Proposals
 
 - PEP 8 is "Style Guide for Python Code" - Naming conventions for Variables, Functions, Number of Spaces, etc...
@@ -33,6 +37,7 @@ tags:
 1. **Command Line**: Provide scripts to interpreter on the command line `$ python3 -c "print('hello world')"`
 2. **Execute Scripts**: Pass `.py` or `.pyc` script to the Python interpreter.
 3. **Python Shell**: Running the Python interpreter interactively is a quick and easy way to write and test code snippets.
+4. **Shebang:** At the beginning of the script tell the interpreter you are using python with `#!/usr/bin/python` or tell the terminal to use python with `python3 Script.py`
 
 ---
 

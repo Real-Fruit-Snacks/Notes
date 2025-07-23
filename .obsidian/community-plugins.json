@@ -1,11 +1,11 @@
 [
-  "obsidian-style-settings",
   "table-editor-obsidian",
   "recent-files-obsidian",
   "obsidian-linter",
-  "prettier-format",
   "inline-callouts",
   "settings-search",
   "obsidian-git",
-  "OA-file-hider"
+  "OA-file-hider",
+  "mark-open-files",
+  "obsidian-style-settings"
 ]
