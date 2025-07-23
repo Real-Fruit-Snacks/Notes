@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e631f37da432c967",
+        "id": "5cff95e08ce344a5",
         "type": "tabs",
         "children": [
           {
-            "id": "8a5c16012f20c536",
+            "id": "665e5cd1389dea2b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Coding/Python/Syntax.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Syntax"
+              "title": "New tab"
             }
           }
         ]
@@ -96,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 278.5
   },
   "right": {
     "id": "a60215fdf86b9490",
@@ -177,14 +173,23 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "1179cef9e8061f64",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
           }
         ],
         "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -197,12 +202,31 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f5bee28ecab57d88",
+  "active": "665e5cd1389dea2b",
   "lastOpenFiles": [
+    "Coding/Python/Syntax/Control Statements.md",
+    "Coding/Python/Syntax/What is Python.md",
+    "Coding/Python/Syntax/Virtual Environment.md",
+    "Coding/Python/Syntax/Variables.md",
+    "Coding/Python/Syntax/Tuples.md",
+    "Coding/Python/Syntax/Regular Expressions.md",
+    "Coding/Python/Syntax.md",
+    "Coding/Python/Syntax/File Operations.md",
+    "Coding/Python/Syntax/Lambda.md",
+    "Coding/Python/Syntax/Dictionary.md",
+    "Coding/Python/Syntax/Loops.md",
+    "Coding/Python/Syntax/Lists.md",
+    "Coding/Python/Syntax/Modules.md",
+    "Coding/Python/Syntax/Debugging.md",
+    "Coding/Python/Syntax/Syntax.md",
+    "Coding/Python/Syntax/Strings.md",
+    "Coding/Python/Syntax/Function.md",
+    "Coding/Python/Syntax/Name Spaces.md",
+    "Coding/Python/Syntax/Math.md",
+    "Coding/Python/Syntax",
     "Attachments",
     "Coding/Python/Pywars.md",
     "README.md",
-    "Coding/Python/Syntax.md",
     "Coding/Python/Offsense",
     "Coding/Python/Forensics",
     "Coding/Python/Defense",
@@ -215,16 +239,6 @@
     "notes/examples/variable-examples-data-analysis.md",
     "notes/Coding/Python/Forensics",
     "notes/Coding/Python/Offense",
-    "notes/Coding/Python/Defense",
-    "notes/Coding/Python",
-    "notes/Coding",
-    "Coding/Python/General Information.md",
-    "Coding/Python/Defense/scapy.md",
-    "Coding/Python/Automated Defense.md",
-    "Pen Test Notes.md",
-    "Attachments/Untitled 1.md",
-    "Attachments/Untitled.md",
-    "Untitled 4/Untitled 5/Untitled 6/a.md",
-    "Welcome.md"
+    "notes/Coding/Python/Defense"
   ]
 }

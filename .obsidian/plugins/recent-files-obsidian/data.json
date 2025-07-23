@@ -1,8 +1,76 @@
 {
   "recentFiles": [
     {
+      "basename": "Control Statements",
+      "path": "Coding/Python/Syntax/Control Statements.md"
+    },
+    {
+      "basename": "What is Python",
+      "path": "Coding/Python/Syntax/What is Python.md"
+    },
+    {
+      "basename": "Virtual Environment",
+      "path": "Coding/Python/Syntax/Virtual Environment.md"
+    },
+    {
+      "basename": "Variables",
+      "path": "Coding/Python/Syntax/Variables.md"
+    },
+    {
+      "basename": "Tuples",
+      "path": "Coding/Python/Syntax/Tuples.md"
+    },
+    {
+      "basename": "Regular Expressions",
+      "path": "Coding/Python/Syntax/Regular Expressions.md"
+    },
+    {
+      "basename": "File Operations",
+      "path": "Coding/Python/Syntax/File Operations.md"
+    },
+    {
+      "basename": "Lambda",
+      "path": "Coding/Python/Syntax/Lambda.md"
+    },
+    {
+      "basename": "Dictionary",
+      "path": "Coding/Python/Syntax/Dictionary.md"
+    },
+    {
+      "basename": "Loops",
+      "path": "Coding/Python/Syntax/Loops.md"
+    },
+    {
+      "basename": "Lists",
+      "path": "Coding/Python/Syntax/Lists.md"
+    },
+    {
+      "basename": "Modules",
+      "path": "Coding/Python/Syntax/Modules.md"
+    },
+    {
+      "basename": "Debugging",
+      "path": "Coding/Python/Syntax/Debugging.md"
+    },
+    {
       "basename": "Syntax",
-      "path": "Coding/Python/Syntax.md"
+      "path": "Coding/Python/Syntax/Syntax.md"
+    },
+    {
+      "basename": "Strings",
+      "path": "Coding/Python/Syntax/Strings.md"
+    },
+    {
+      "basename": "Function",
+      "path": "Coding/Python/Syntax/Function.md"
+    },
+    {
+      "basename": "Name Spaces",
+      "path": "Coding/Python/Syntax/Name Spaces.md"
+    },
+    {
+      "basename": "Math",
+      "path": "Coding/Python/Syntax/Math.md"
     },
     {
       "basename": "Pywars",
