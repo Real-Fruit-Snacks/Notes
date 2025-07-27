@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "Wget",
+      "path": "File Transfer/Wget.md"
+    },
+    {
+      "basename": "Netcat (nc)",
+      "path": "File Transfer/Netcat (nc).md"
+    },
+    {
+      "basename": "Impacket",
+      "path": "File Transfer/Impacket.md"
+    },
+    {
       "basename": "README",
       "path": "README.md"
     },
