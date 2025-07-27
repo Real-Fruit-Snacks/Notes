@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
       "basename": "Control Statements",
       "path": "Coding/Python/Syntax/Control Statements.md"
     },
@@ -87,10 +91,6 @@
     {
       "basename": "index",
       "path": "notes/index.md"
-    },
-    {
-      "basename": "README",
-      "path": "README.md"
     },
     {
       "basename": "Scapy",
