@@ -3,7 +3,7 @@ tags:
   - python
 ---
 
-Lists are an indexed group of objects.
+> Lists are an indexed group of objects.
 
 - Define with square brackets `[]`
 - Empty List = `[]`, `list()`
@@ -20,8 +20,11 @@ List items must be assigned when the list is created or with the `append()`metho
 ```python
 # Create list
 newlist = ['A','B','C']
+
 # Add to list
 newlist[3]="D"
+# or 
+newlist.append("D")
 ```
 
 ## List Methods
@@ -41,11 +44,13 @@ newlist[3]="D"
 >>> movies=["Life of Brian","Meaning of Life"]
 >>> movies.index("Meaning of Life")
 1
+
 >>> movies.insert(1,"Holy Grail")
 >>> movies
 ['Life of Brian', 'Holy Grail', 'Meaning of Life']
 >>> movies.index("Meaning of Life")
 2
+
 >>> movies[2]
 'Meaning of Life'
 >>> movies.append("Free Willie")
@@ -56,8 +61,7 @@ newlist[3]="D"
 ['Life of Brian', 'Holy Grail', 'Meaning of Life']
 >>> movies.insert(0,"Secret Policemans ball")
 >>> movies
-['Secret Policemans ball', 'Life of Brian', 'Holy
-Grail', 'Meaning of Life']
+['Secret Policemans ball', 'Life of Brian', 'Holy Grail', 'Meaning of Life']
 >>> movies.remove("Secret Policemans ball")
 >>> movies
 ['Life of Brian', 'Holy Grail', 'Meaning of Life']
@@ -99,7 +103,7 @@ kali@kali:~$ python listTest4.py
 ["apple", "banana", "orange"]
 ```
 
-## Making Copies of Lists
+## Adding and Removing Items from a List
 
 ```python
 >>> alist = ['elements', 'in a list', 500, 4.2999999998]
@@ -115,6 +119,10 @@ kali@kali:~$ python listTest4.py
 ['elements', 'in a list', 4.2999999998, 'Add this to the list']
 >>> alist
 ['elements', 'in a list', 500, 4.2999999998, 'Add this to list']
+>>> alist = ['elements', 'in a list', 500, 4.2999999998]
+del alist[0]
+alist
+['in a list', 500, 4.2999999998]
 ```
 
 ## Converting Strings to Lists with .split()

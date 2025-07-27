@@ -122,3 +122,185 @@ astr = "First {} Second {} Third {}".format('X',2,num)
 print("Python rocks"[:6][::-1])
 # nohtyP
 ```
+
+## Upper, Lower, Title Case
+
+```python
+name = "title this variable"
+print(name.title())
+
+Title This Variable
+```
+
+---
+
+## Methods
+
+`capitalize()`
+- Converts the first character to uppercase and makes all other characters lowercase
+- Example: `"hello world".capitalize()` returns `"Hello world"`
+
+`center(width[, fillchar])`
+- Centers the string in a field of given width
+- Optional fillchar parameter specifies padding character (default is space)
+- Example: `"hello".center(10)` returns `"  hello   "`
+
+`count(sub[, start[, end]])`
+- Returns the number of non-overlapping occurrences of substring sub
+- Optional start and end parameters specify range to search
+- Example: `"hello world".count("o")` returns `2`
+
+`decode(encoding='utf-8', errors='strict')`
+- Decodes bytes to string using specified encoding
+- Not commonly used in Python 3 as strings are Unicode by default
+- Example: `b"hello".decode('utf-8')` returns `"hello"`
+
+`encode(encoding='utf-8', errors='strict')`
+- Encodes string to bytes using specified encoding
+- Not commonly used in Python 3 as strings are Unicode by default
+- Example: `"hello".encode('utf-8')` returns `b"hello"`
+
+`endswith(suffix[, start[, end]])`
+- Checks if string ends with specified suffix
+- Optional start and end parameters specify range to check
+- Example: `"hello.txt".endswith(".txt")` returns `True`
+
+`expandtabs(tabsize=8)`
+- Replaces tab characters with spaces, using specified tab size
+- Example: `"hello\tworld".expandtabs(4)` returns `"hello world"`
+
+`find(sub[, start[, end]])`
+- Returns lowest index of substring sub in string
+- Returns -1 if not found
+- Optional start and end parameters specify range to search
+- Example: `"hello world".find("o")` returns `4`
+
+`format(*args, **kwargs)`
+- Formats string using replacement fields
+- Supports positional and keyword arguments
+- Example: `"{} is {} years old".format("John", 30)` returns `"John is 30 years old"`
+
+`index(sub[, start[, end]])`
+- Similar to find(), but raises ValueError if substring not found
+- Example: `"hello world".index("o")` returns `4`
+
+`isalnum()`
+- Checks if all characters are alphanumeric (letters and digits)
+- Example: `"hello123".isalnum()` returns `True`
+
+`isalpha()`
+- Checks if all characters are alphabetic letters
+- Example: `"hello".isalpha()` returns `True`
+
+`isdigit()`
+- Checks if all characters are digits
+- Example: `"123".isdigit()` returns `True`
+
+`islower()`
+- Checks if all cased characters are lowercase
+- Example: `"hello".islower()` returns `True`
+
+`isspace()`
+- Checks if all characters are whitespace
+- Example: `"   ".isspace()` returns `True`
+
+`istitle()`
+- Checks if string follows title case rules
+- Example: `"Hello World".istitle()` returns `True`
+
+`isupper()`
+- Checks if all cased characters are uppercase
+- Example: `"HELLO".isupper()` returns `True`
+
+`join(iterable)`
+- Joins elements of iterable into a single string separated by string
+- Example: `",".join(["a", "b", "c"])` returns `"a,b,c"`
+
+`ljust(width[, fillchar])`
+- Left-justifies string in field of given width
+- Optional fillchar parameter specifies padding character
+- Example: `"hello".ljust(10)` returns `"hello     "`
+
+`lower()`
+- Converts all characters to lowercase
+- Example: `"HELLO".lower()` returns `"hello"`
+
+`lstrip([chars])`
+- Removes leading whitespace or specified characters
+- Example: `"   hello".lstrip()` returns `"hello"`
+
+`partition(separator)`
+- Splits string into tuple containing part before separator, separator itself, and part after
+- Example: `"hello world".partition(" ")` returns `("hello", " ", "world")`
+
+`replace(old, new[, count])`
+- Replaces occurrences of old substring with new substring
+- Optional count parameter limits number of replacements
+- Example: `"hello world".replace("o", "a")` returns `"hella warld"`
+
+`rfind(sub[, start[, end]])`
+- Returns highest index of substring sub in string
+- Returns -1 if not found
+- Optional start and end parameters specify range to search
+- Example: `"hello world".rfind("o")` returns `7`
+
+`rindex(sub[, start[, end]])`
+- Similar to rfind(), but raises ValueError if substring not found
+- Example: `"hello world".rindex("o")` returns `7`
+
+`rjust(width[, fillchar])`
+- Right-justifies string in field of given width
+- Optional fillchar parameter specifies padding character
+- Example: `"hello".rjust(10)` returns `"     hello"`
+
+`rpartition(separator)`
+- Similar to partition(), but splits from right side
+- Example: `"hello world".rpartition(" ")` returns `("hello", " ", "world")`
+
+`rsplit(sep=None, maxsplit=-1)`
+- Splits string from right side using sep as delimiter
+- Optional maxsplit parameter limits number of splits
+- Example: `"hello world".rsplit(" ")` returns `["hello", "world"]`
+
+`rstrip([chars])`
+- Removes trailing whitespace or specified characters
+- Example: `"hello   ".rstrip()` returns `"hello"`
+
+`split(sep=None, maxsplit=-1)`
+- Splits string into list using sep as delimiter
+- Optional maxsplit parameter limits number of splits
+- Example: `"hello world".split(" ")` returns `["hello", "world"]`
+
+`splitlines(keepends=False)`
+- Splits string at line boundaries
+- Optional keepends parameter preserves line breaks
+- Example: `"line1\nline2".splitlines()` returns `["line1", "line2"]`
+
+`startswith(prefix[, start[, end]])`
+- Checks if string starts with specified prefix
+- Optional start and end parameters specify range to check
+- Example: `"hello.txt".startswith("hello")` returns `True`
+
+`strip([chars])`
+- Removes leading and trailing whitespace or specified characters
+- Example: `"   hello   ".strip()` returns `"hello"`
+
+`swapcase()`
+- Swaps case of all characters
+- Example: `"Hello World".swapcase()` returns `"hELLO wORLD"`
+
+`title()`
+- Converts string to title case
+- Example: `"hello world".title()` returns `"Hello World"`
+
+`translate(table)`
+- Translates string using translation table
+- Example: `"hello".translate(str.maketrans("aeiou", "AEIOU"))` returns `"hEllO"`
+
+`upper()`
+- Converts all characters to uppercase
+- Example: `"hello".upper()` returns `"HELLO"`
+
+`zfill(width)`
+- Pads string with zeros on left to reach specified width
+- Example: `"42".zfill(5)` returns `"00042"`
