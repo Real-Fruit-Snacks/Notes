@@ -2,128 +2,240 @@
 tags:
   - python
 ---
-
-Python provides multiple ways to read, write, and manage files using built-in functions and the `pathlib` and `os` modules.
-
----
-
 ## File Open Modes
 
-| Mode   | Description                                                                 |
-| ------ | --------------------------------------------------------------------------- |
-| `'r'`  | Read-only mode (file must exist)                                            |
-| `'w'`  | Write mode (creates or overwrites the file)                                 |
-| `'a'`  | Append mode (adds content to the end of file)                               |
-| `'rb'` | Read binary mode (reads file as bytes, no decoding or line ending handling) |
-| `'rt'` | Read text mode (default; interprets Unicode and line endings like `\n`)     |
-
----
-
-## Opening a File
-
-### Option 1: Manual open and close
+| Mode | Description                                              |
+| ---- | -------------------------------------------------------- |
+| `r`  | Read-only (file must exist)                              |
+| `w`  | Write (creates file or truncates existing)               |
+| `a`  | Append (creates file if needed; writes at end)           |
+| `rb` | Read binary (returns `bytes`, no decoding)               |
+| `wb` | Write binary (writes `bytes`, truncates or creates file) |
+| `rt` | Read text (default; decodes to `str`, handles `\n`)      |
+| `x`  | Exclusive creation (fails if file exists)                |
 
 ```python
-filehandle = open("complete_file_path", "<mode>")
-# Don't forget to call filehandle.close() when done
-```
-
-### Option 2: With context manager (recommended)
-
-```python
-with open("complete_file_path", "<mode>") as file_handle:
-    # work with file_handle inside this block
-# File is automatically closed
+# Examples of modes
+open('data.txt', 'r')   # open for reading text
+open('data.txt', 'wb')  # open for writing bytes
+open('log.txt', 'a')    # open for appending text
+open('new.txt', 'x')    # create new file only if it doesn't exist
 ```
 
 ---
 
+## Opening and Closing Files
+### 1. Manual Open/Close
+
+```python
+f = open('example.txt', 'r')      # must call close()
+data = f.read()
+f.close()
+```
+### 2. Context Manager (Recommended)
+Automatically closes the file when the block ends.
+
+```python
+with open('example.txt', 'r') as f:
+    data = f.read()
+# f is closed here
+```
+
+---
 ## Reading from Files
+Assume a file `sample.txt` contains:
 
-### Read line by line
+```
+Line 1
+Line 2
+Line 3
+```
+### Read Entire File as String
 
 ```python
-filehandle = open('filename', 'r')
-for oneline in filehandle:
-    print(oneline, end="")
-filehandle.close()
+with open('sample.txt', 'r') as f:
+    content = f.read()
+print(content)
+# Output:
+# Line 1
+# Line 2
+# Line 3
+```
+### Read All Lines into a List
+
+```python
+with open('sample.txt', 'r') as f:
+    lines = f.readlines()
+print(lines)
+# Output: ['Line 1\n', 'Line 2\n', 'Line 3\n']
 ```
 
-### Read entire file into a list
+### Read Line by Line
 
 ```python
-filehandle = open('filename', 'r')
-list_of_lines = filehandle.readlines()
-filehandle.close()
+with open('sample.txt', 'r') as f:
+    for line in f:
+        print(line.strip())
+# Output:
+# Line 1
+# Line 2
+# Line 3
 ```
 
-### Read entire file into a string
+### Read Fixed-Size Chunks
 
 ```python
-filehandle = open('filename', 'r')
-content = filehandle.read()
-filehandle.close()
+with open('sample.txt', 'r') as f:
+    chunk = f.read(5)    # read first 5 characters
+    print(chunk)
+# Output: 'Line '
 ```
 
-> To read binary data, open the file with mode `'rb'` and store the result in `bytes()` or `bytearray()`.
-
-### Using `pathlib` to read a file
+### Reading Binary Data
 
 ```python
-from pathlib import Path
-content = Path("/etc/passwd").read_text()
+with open('image.png', 'rb') as f:
+    data = f.read()
+print(type(data))       # <class 'bytes'>
 ```
 
 ---
 
 ## Writing to Files
-
-### Overwrite content with `'w'`
+### Overwrite (Mode `w`)
 
 ```python
-filehandle = open('filename', 'w')
-filehandle.write("Write this one line.\n")
-filehandle.write("Write these\nTwo lines\n")
-filehandle.close()
+with open('output.txt', 'w') as f:
+    f.write("First line.\n")
+    f.write("Second line.\n")
+# 'output.txt' now contains those two lines
+```
+### Append (Mode `a`)
+
+```python
+with open('output.txt', 'a') as f:
+    f.write("Third line.\n")
+# Adds to end without erasing existing content
 ```
 
-### Append content with `'a'`
+### Write a List of Strings
 
 ```python
-filehandle = open('filename', 'a')
-filehandle.write("Add this to the file")
-filehandle.close()
+lines = ['One\n', 'Two\n', 'Three\n']
+with open('output.txt', 'w') as f:
+    f.writelines(lines)
+# Equivalent to multiple f.write() calls
+```
+
+### Writing Binary Data
+
+```python
+binary_data = b'\x00\x01\x02'
+with open('data.bin', 'wb') as f:
+    f.write(binary_data)
 ```
 
 ---
 
-## Checking if a File Exists
+## File Existence and Metadata
 
-You can use either `pathlib` or `os` to check for file existence.
+### Using `pathlib`
 
 ```python
 from pathlib import Path
-Path("/root/test.txt").is_file()   # False
-Path("/root/test.txt").exists()    # False
 
+p = Path('example.txt')
+print(p.exists())    # True if path exists (file or directory)
+print(p.is_file())   # True if it's a regular file
+print(p.is_dir())    # True if it's a directory
+```
+
+### Using `os.path`
+
+```python
 import os
-os.path.exists("/root/test.txt")   # False
+
+print(os.path.exists('example.txt'))      # Same as Path.exists()
+print(os.path.isfile('example.txt'))      # True if file
+print(os.path.isdir('example.txt'))       # True if directory
 ```
 
 ---
 
-## Listing Files in a Directory
+## Listing Directory Contents
 
-Use `pathlib.Path.glob()` to list matching files or directories.
+### `pathlib.Path.glob()`
+
+```python
+from pathlib import Path
+folder = Path('/home/user')
+
+# All Python files
+for py in folder.glob('*.py'):
+    print(py.name)
+
+# All entries
+for entry in folder.glob('*'):
+    print(entry)
+```
+
+### Filtering Only Files
+
+```python
+from pathlib import Path
+folder = Path('/home/user')
+
+files = [p for p in folder.iterdir() if p.is_file()]
+print(files)
+```
+
+### Using `os.listdir()`
+
+```python
+import os
+
+entries = os.listdir('/home/user')
+print(entries)  # names only, not full paths
+```
+
+---
+
+## Reading and Writing with `pathlib`
 
 ```python
 from pathlib import Path
 
-xpath = Path("/home/student/Documents/pythonclass/")
+# Read text
+text = Path('notes.txt').read_text()
 
-# List all Python files
-list(xpath.glob("*.py"))
+# Read bytes
+data = Path('image.png').read_bytes()
 
-# List only files (not directories) using list comprehension
-[ str(p) for p in xpath.glob("*") if p.is_file() ]
+# Write text
+Path('notes.txt').write_text("Hello, world!\n")
+
+# Write bytes
+Path('output.bin').write_bytes(b'\xde\xad\xbe\xef')
 ```
+
+---
+
+## Best Practices
+
+- Always use a **context manager** (`with`), to ensure files close properly.
+- Specify encoding for text files when needed:
+    ```python
+    open('utf8.txt', 'r', encoding='utf-8')
+    ```
+- Handle exceptions around I/O to catch permission errors, missing files, etc.:
+
+    ```python
+    try:
+        with open('config.json') as f:
+            config = f.read()
+    except FileNotFoundError:
+        print("Config file not found")
+    ```
+    
+- For high-performance or large files, consider reading/writing in **chunks** or using **memory‑mapped** files via `mmap`.
+    

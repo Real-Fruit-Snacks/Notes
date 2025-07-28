@@ -2,74 +2,143 @@
 tags:
   - python
 ---
-Control statements allow your program to make decisions and execute different blocks of code based on conditions. These include:
+## What Are Control Statements?
+Control statements let your program choose which code blocks to run based on Boolean conditions. The primary conditional statements in Python are:
 
-- `if`, `elif`, and `else` statements
-- Loop structures like `for` and `while` (covered separately)
+- `if`
+- `if` / `else`
+- `if` / `elif` / `else`
 
-The core idea: **code blocks run only when their conditions are met.**
+Each example below shows the syntax followed by a concrete use case.
 
 ---
-
 ## Basic `if` Statement
-
-Use `if` to execute a block of code only when a condition is true.
+Execute a block only when its condition is true.
 
 ```python
-if username != '':
-    # Block 1: Runs only if username is not an empty string
+# Syntax
+if condition:
+    # code to run when condition is True
 
-    if username == 'root':
-        # Block 2: Runs only if username equals 'root'
-
-    if username != 'root':
-        # Block 3: Runs only if username is not 'root'
+# Example
+username = "alice"
+if username != "":
+    print("Hello,", username)
+    # Output: Hello, alice
 ```
-
-Each `if` statement is evaluated independently. Indentation defines the block of code associated with each condition.
 
 ---
 
 ## `if` / `else` Statement
 
-Use `else` to define a fallback when the `if` condition is not met.
+Provide a fallback block when the `if` condition is false.
 
 ```python
-def even_or_not(number):
-    if number % 2 == 0:
-        return "Yep. Even"
+# Syntax
+if condition:
+    # code if True
+else:
+    # code if False
+
+# Example
+def even_or_odd(n):
+    if n % 2 == 0:
+        return "even"
     else:
-        return "Nope. Odd"
+        return "odd"
 
-# Example calls
-even_or_not(5)        # Output: 'Nope. Odd'
-even_or_not(10)       # Output: 'Yep. Even'
-even_or_not(0xfff3)   # Output: 'Nope. Odd'
-even_or_not(0b101100) # Output: 'Yep. Even'
+print(even_or_odd(7))   # Output: odd
+print(even_or_odd(10))  # Output: even
 ```
-
-- `%` is the modulus operator; it checks for a remainder after division.
-- `0xfff3` and `0b101100` are hexadecimal and binary literals.
 
 ---
 
 ## `if` / `elif` / `else` Statement
 
-Use `elif` (else if) to handle multiple conditions. The first true condition is executed; others are skipped.
+Handle multiple, mutually exclusive conditions. Python evaluates each in order and runs only the first true block.
 
 ```python
-if username == "root":
-    # Do something for root
-elif username == "hacker":
-    # Do something for hacker
-elif username == "admin":
-    # Do something for admin
+# Syntax
+if condition1:
+    # code1
+elif condition2:
+    # code2
+elif condition3:
+    # code3
 else:
-    # Do something for all other usernames
+    # fallback code
+
+# Example
+def access_level(role):
+    if role == "admin":
+        return "Full access"
+    elif role == "editor":
+        return "Edit access"
+    elif role == "viewer":
+        return "Read-only access"
+    else:
+        return "No access"
+
+print(access_level("editor"))  # Output: Edit access
+print(access_level("guest"))   # Output: No access
 ```
 
-### Notes:
+---
 
-- You can include as many `elif` branches as needed.
-- The `else` block is optional, but useful as a catch-all.
-- Only one branch of an `if`/`elif`/`else` chain will be executed.
+## Ternary (Conditional) Expression
+
+A one‑liner if/else that returns a value.
+
+```python
+# Syntax
+<true_value> if condition else <false_value>
+
+# Example
+n = 5
+parity = "even" if n % 2 == 0 else "odd"
+print(parity)   # Output: odd
+```
+
+---
+
+## Boolean Operators in Conditions
+
+Combine or negate tests with `and`, `or`, `not`.
+
+```python
+# and: all sub-conditions must be True
+x = 10
+if x > 0 and x < 20:
+    print("x is between 1 and 19")
+
+# or: at least one sub-condition True
+user = "alice"
+if user == "root" or user == "admin":
+    print("Privileged user")
+
+# not: invert a Boolean
+flag = False
+if not flag:
+    print("Flag is False")
+```
+
+---
+
+## Truthy and Falsy Values
+
+In an `if` test, Python treats the following as False; everything else is True:
+
+- **Falsy**: `False`, `None`, `0`, `0.0`, `''` (empty string), `[]`, `{}`, `set()`, `()`, `range(0)`
+    
+- **Truthy**: virtually any other value or non-empty container
+    
+
+```python
+items = []
+if items:
+    print("List has items")
+else:
+    print("List is empty")
+    # Output: List is empty
+```
+

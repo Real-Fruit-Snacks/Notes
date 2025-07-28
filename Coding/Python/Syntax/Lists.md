@@ -2,161 +2,239 @@
 tags:
   - python
 ---
-A **list** in Python is an **ordered**, **mutable** collection of items. Lists can hold any type of object, including other lists.
+## What Is a List?
+- **Ordered** collection: items stay in the order you put them.
+- **Mutable**: you can change, add, or remove elements after creation.
+- **Heterogeneous**: mix ints, strings, objects—even other lists.
+
+```python
+mixed = [1, "two", 3.0, [4, 5]]
+```
 
 ---
+## Creating Lists
 
-## List Basics
-- **Defined using** square brackets: `[]`
-- **Create empty list**: `[]` or `list()`
-- **Lists are zero-indexed** (first element is at index 0)
-- **Mutable**: items can be changed after creation
-- **Flexible**: can contain mixed data types
-### Example
 ```python
-names = ['Alice', 'Bob', 'Eve']
-names[0]  # Output: 'Alice'
+# Literal syntax (most common)
+empty     = []
+letters   = ['a', 'b', 'c']
+
+# Built‑in constructor
+nums_list = list((1, 2, 3))
+chars     = list("hello")   # ['h','e','l','l','o']
+```
+
+---
+## Accessing & Slicing
+
+```python
+L = ['zero','one','two','three','four']
+
+# Indexing (zero-based)
+print(L[0])    # 'zero'
+print(L[-1])   # 'four'
+
+# Slicing: [start:stop:step]
+print(L[1:4])   # ['one','two','three']
+print(L[:3])    # ['zero','one','two']
+print(L[::2])   # ['zero','two','four']
+print(L[::-1])  # ['four','three','two','one','zero']
 ```
 
 ---
 
-## Creating and Modifying Lists
+## Modifying Lists
+
+- **Overwrite element**
+
+    ```python
+    L = [10, 20, 30]
+    L[1] = 99
+    print(L)     # [10, 99, 30]
+    ```
+    
+- **Append**
+
+    ```python
+    L = [1, 2, 3]
+    L.append(4)
+    print(L)     # [1, 2, 3, 4]
+    ```
+    
+- **Insert at position**
+
+    ```python
+    L = ['a', 'c', 'd']
+    L.insert(1, 'b')
+    print(L)     # ['a', 'b', 'c', 'd']
+    ```
+    
+- **Extend by another iterable**
+
+    ```python
+    L = [1, 2]
+    L.extend([3, 4, 5])
+    print(L)     # [1, 2, 3, 4, 5]
+    ```
+    
+- **Remove by value**
+
+    ```python
+    L = ['apple', 'banana', 'cherry']
+    L.remove('banana')
+    print(L)     # ['apple', 'cherry']
+    ```
+    
+- **Pop by index (or last element)**
+
+    ```python
+    L = [100, 200, 300]
+    x = L.pop(1)
+    print(x)     # 200
+    print(L)     # [100, 300]
+    y = L.pop()
+    print(y)     # 300
+    print(L)     # [100]
+    ```
+    
+- **Delete slice or element**
+
+    ```python
+    L = [0, 1, 2, 3, 4]
+    del L[2]
+    print(L)     # [0, 1, 3, 4]
+    del L[1:3]
+    print(L)     # [0, 4]
+    ```
+    
+- **Clear all elements**
+
+    ```python
+    L = [9, 8, 7]
+    L.clear()
+    print(L)     # []
+    ```
+    
+- **Reverse in place**
+
+    ```python
+    L = ['a', 'b', 'c']
+    L.reverse()
+    print(L)     # ['c', 'b', 'a']
+    ```
+    
+- **Sort in place**
+
+    ```python
+    L = [5, 1, 4, 2, 3]
+    L.sort()
+    print(L)     # [1, 2, 3, 4, 5]
+    L.sort(reverse=True)
+    print(L)     # [5, 4, 3, 2, 1]
+    ```
+    
+- **Copy (shallow)**
+
+    ```python
+    L = [1, 2, [3, 4]]
+    C = L.copy()
+    C.append(5)
+    print(L)     # [1, 2, [3, 4]]
+    print(C)     # [1, 2, [3, 4], 5]
+    C[2].append(99)
+    print(L)     # [1, 2, [3, 4, 99]]  (inner list is shared)
+    ```
+    
+
+---
+
+## Shallow vs. Deep Copies
 
 ```python
-newlist = ['A', 'B', 'C']
+import copy
+orig    = [[1, 2], [3, 4]]
+shallow = orig.copy()
+deep    = copy.deepcopy(orig)
 
-# Overwrite an index
-newlist[2] = "Z"
-
-# Append to the end
-newlist.append("D")
+shallow[0].append(9)
+print(orig)   # [[1, 2, 9], [3, 4]]
 ```
 
 ---
 
-## Common List Methods
-
-| Method                 | Description                       |
-| ---------------------- | --------------------------------- |
-| `append(value)`        | Add value to the end              |
-| `insert(index, value)` | Insert value at specific position |
-| `remove(value)`        | Remove first occurrence of value  |
-| `del list[index]`      | Delete element by index           |
-| `list[index] = value`  | Overwrite element at index        |
-| `index(value)`         | Get index of first occurrence     |
-| `count(value)`         | Count number of occurrences       |
-| `sort()`               | Sort list in place                |
-| `reverse()`            | Reverse the order of the list     |
-
-### Example
+## List References
 
 ```python
-movies = ["Life of Brian", "Meaning of Life"]
-
-movies.index("Meaning of Life")      # Output: 1
-movies.insert(1, "Holy Grail")
-movies.append("Free Willie")
-movies.remove("Free Willie")
-movies.reverse()
-del movies[0]
+a = [1, 2, 3]
+b = a
+b.append(4)
+print(a)  # [1, 2, 3, 4]
 ```
 
 ---
 
-## Adding Items to a List
+## Converting to & from Strings
 
 ```python
-fruitList = ["apple", "banana", "orange"]
-fruitList.append("mango")
+# Split string → list
+words = "one two three".split()
+print(words)  # ['one', 'two', 'three']
 
-print(fruitList)
-# Output: ['apple', 'banana', 'orange', 'mango']
+# Join list → string
+s = "-".join(['2025','07','28'])
+print(s)      # '2025-07-28'
 ```
 
 ---
 
-## Removing Items from a List
+## Sorting & Ordering
 
 ```python
-fruitList = ["apple", "banana", "orange", "mango"]
-fruitList.remove("mango")
+nums = [5, 2, 9, 1]
+print(sorted(nums))              # [1, 2, 5, 9]
 
-print(fruitList)
-# Output: ['apple', 'banana', 'orange']
-```
+names = ["Bob", "alice", "Charlie"]
+print(sorted(names, key=str.lower))
+# ['alice', 'Bob', 'Charlie']
 
----
-
-## List References vs. Copies
-
-```python
-alist = ['elements', 'in a list', 500, 4.29]
-
-# blist refers to the same list as alist
-blist = alist
-blist.append("New Item")
-
-# Create a shallow copy
-clist = list(alist)
-clist.remove(500)
-
-# Modify alist separately
-del alist[0]
-```
-
----
-
-## String and List Conversion
-### Splitting Strings into Lists with `.split()`
-
-```python
-"ONE TWO THREE".split()             # ['ONE', 'TWO', 'THREE']
-"'a','b','c'".split(",")            # ["'a'", "'b'", "'c'"]
-"HELLO_WORLD".split("_")           # ['HELLO', 'WORLD']
-```
-### Joining Lists into Strings with `.join()`
-```python
-" ".join(["Python", "is", "fun"])  # 'Python is fun'
-",".join(["a", "b", "c"])          # 'a,b,c'
-"".join(["abc", "123"])            # 'abc123'
-```
-
----
-
-## Sorting Lists
-You can sort lists either in place or by generating a new sorted copy.
-
-| Method         | Description                      |
-| -------------- | -------------------------------- |
-| `list.sort()`  | Sorts the list in place          |
-| `sorted(list)` | Returns a new sorted list        |
-| `reverse=True` | Sort in reverse order (optional) |
-| `key=function` | Use custom logic for sorting     |
-### Example
-```python
-customers = ["Mike Passel", "alice Passel", "danielle Clayton"]
-
-# Case-insensitive sort
-sorted(customers, key=lambda name: name.lower())
-
-# Sort by last name first
-def lastfirst(name):
-    first, last = name.split()
-    return (last + first).lower()
-
-sorted(customers, key=lastfirst)
+# Custom key: sort by length
+words = ["hi", "hello", "hey"]
+print(sorted(words, key=len))    # ['hi', 'hey', 'hello']
 ```
 
 ---
 
 ## List Comprehensions
-List comprehensions offer a concise syntax for creating or transforming lists.
-### Examples
+
 ```python
-[a for a in [1, 2, 3, 4]]                        # [1, 2, 3, 4]
-[a for a in [1, 2, 3, 4] if a > 2]               # [3, 4]
-[a * 2 for a in [1, 2, 3, 4] if a > 2]           # [6, 8]
-[int(a) for a in "1 2 3 4".split()]              # [1, 2, 3, 4]
-[x for x, y in [("a", 4), ("b", 2), ("c", 7)]]   # ['a', 'b', 'c']
-[(lambda x: x.upper())(x) for x in "make upper"]# ['M', 'A', 'K', 'E', ' ', 'U', 'P', 'P', 'E', 'R']
+# Squares of even numbers
+print([i*i for i in range(10) if i % 2 == 0])
+# [0, 4, 16, 36, 64]
+
+# Flatten a 2D list
+matrix = [[1, 2], [3, 4]]
+print([n for row in matrix for n in row])
+# [1, 2, 3, 4]
 ```
+
+---
+
+## Advanced Tips & Gotchas
+
+- Avoid using `+` to concatenate in loops—prefer `.append()` or comprehensions.
+    
+- To pre‑allocate:
+
+    ```python
+    L = [None] * 5
+    ```
+    
+- Beware of `*` with mutable elements:
+
+    ```python
+    L = [[]] * 3
+    L[0].append(1)
+    print(L)  # [[1], [1], [1]]
+    ```
+    
+- For large or infinite sequences, consider `itertools` instead of giant lists.

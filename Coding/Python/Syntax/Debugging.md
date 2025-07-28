@@ -2,73 +2,103 @@
 tags:
   - python
 ---
+## Python Debugger (`pdb`) Overview
 
-## Python Debugger (PDB)
-
-Python’s built-in debugger, `pdb`, is a powerful tool for inspecting and controlling the flow of a program during execution. It comes preinstalled with Python.
-There are four common ways to use `pdb`:
+Python’s built‑in debugger lets you pause execution, inspect variables, and step through code interactively. It ships with the standard library—no installation required.
 
 ---
 
-### 1. Using `breakpoint()` (Python 3.7+)
+## 1. In‑Code Breakpoints (Python 3.7+)
 
-Insert the `breakpoint()` function in your code to pause execution and enter debugging mode.
+Insert a breakpoint directly in your code.
 
 ```python
 def calculate(x):
-    breakpoint()  # Debugger starts here
+    breakpoint()         # Execution stops here, enters pdb
     return x * 2
 
+# When you run this, you get a (Pdb) prompt at the breakpoint
 calculate(5)
 ```
 
-> `breakpoint()` is equivalent to `import pdb; pdb.set_trace()` in older versions of Python.
+> Under the hood, `breakpoint()` calls `import pdb; pdb.set_trace()`. You can override its behavior by setting the `PYTHONBREAKPOINT` environment variable.
 
 ---
 
-### 2. Using `import pdb; pdb.set_trace()` (Python < 3.7)
+## 2. Explicit `set_trace()` (Pre‑3.7)
 
-If you're using Python versions earlier than 3.7, use the following:
+Manually import `pdb` and invoke `set_trace()`.
 
 ```python
 import pdb
 
 def calculate(x):
-    pdb.set_trace()
+    pdb.set_trace()     # Starts pdb here
     return x * 2
 
 calculate(5)
 ```
 
-This starts the debugger at the point where `pdb.set_trace()` is called.
+At the `(Pdb)` prompt you can enter commands (see “Common Commands” below).
 
 ---
 
-### 3. Running a Script in Debug Mode from the Command Line
+## 3. Command‑Line Debug Mode
 
-You can launch a script under `pdb` directly from the terminal:
+Launch your entire script under the debugger.
 
 ```bash
 python -m pdb script.py
 ```
 
-This starts your program in interactive debug mode from the very beginning.
+- The program begins in pdb immediately.
+- You can set breakpoints before running lines:
+    ```pdb
+    (Pdb) b 10      # Break at line 10
+    (Pdb) c         # Continue until the next breakpoint
+    ```
 
 ---
 
-### 4. Debugging After a Crash (Post-Mortem Debugging)
+## 4. Post‑Mortem Debugging
 
-If your script crashes, you can inspect the state after the exception using an interactive shell:
+Inspect state after an unhandled exception.
 
-```bash
-python -i script.py
-```
+1. Run interactively so the session remains open after a crash:
+    ```bash
+    python -i script.py
+    ```
+2. Once it errors out, at the interactive prompt:
+    ```python
+    import pdb
+    pdb.pm()         # Enter post‑mortem pdb session
+    ```
+    
+3. You’ll drop into the frame where the exception occurred, letting you inspect locals, stack, etc.
+    
 
-Once the crash occurs, enter the following in the interactive shell:
+---
 
-```python
-import pdb
-pdb.pm()
-```
+## Common `pdb` Commands
 
-This invokes the debugger in **post-mortem mode**, allowing you to explore the state of the program at the time of the error.
+| Command     | Purpose                                  | Example                 |
+| ----------- | ---------------------------------------- | ----------------------- |
+| `l`         | List source around current line          | `(Pdb) l`               |
+| `n`         | Execute next line (step over)            | `(Pdb) n`               |
+| `s`         | Step into function calls                 | `(Pdb) s`               |
+| `c`         | Continue until next breakpoint or finish | `(Pdb) c`               |
+| `p`         | Print the value of an expression         | `(Pdb) p variable_name` |
+| `b`         | Set breakpoint (e.g. `b 25` or `b func`) | `(Pdb) b my_function`   |
+| `tbreak`    | Temporary breakpoint                     | `(Pdb) tbreak 30`       |
+| `disable`   | Disable a breakpoint by number           | `(Pdb) disable 1`       |
+| `where`/`w` | Show the current stack trace             | `(Pdb) where`           |
+| `q`         | Quit the debugger and abort execution    | `(Pdb) q`               |
+
+---
+
+## Tips & Best Practices
+
+- **Customize `breakpoint()`**: set `PYTHONBREAKPOINT=0` to disable; or to `mypkg.debugger.set_trace` for a custom hook.
+- **Use a `.pdbrc` file**: configure default commands, aliases, and layouts when pdb starts.
+- **Combine with logging**: use `pdb.set_trace()` in exception handlers to inspect unexpected states.
+- **Graphical front‑ends**: many IDEs and editors (VS Code, PyCharm) provide GUI wrappers around pdb.

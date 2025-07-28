@@ -2,190 +2,212 @@
 tags:
   - python
 ---
+## What Is a Dictionary?
 
-
-A **dictionary** is a collection of key-value pairs in Python. Unlike lists, which use numeric indices, dictionaries use keys to access their associated values.
-
----
-
-## Dictionary Basics
-
-- Lists are indexed automatically using integers:
-
-    ```python
-    list1 = ['a', 'b', 'c']
-    list1[0]  # returns 'a'
-    ```
-    
-- Dictionaries use explicitly defined **keys** as indices:
-
-    ```python
-    dict1 = {'first': 'a', 'second': 'b', 'third': 'c'}
-    dict1['first']  # returns 'a'
-    ```
-    
-- Keys can be strings, integers, or other hashable Python objects
-- Values can be any Python object, including numbers, strings, lists, or even other dictionaries
-- Dictionary lookups are very fast and efficient
-
----
-
-## Dictionary Methods
-
-| Method          | Description                        |
-| --------------- | ---------------------------------- |
-| `dict.keys()`   | Returns a view of all keys         |
-| `dict.values()` | Returns a view of all values       |
-| `dict.items()`  | Returns a view of key-value tuples |
-
-### Example:
+- A **mapping** of **keys** to **values**.
+- **Unordered** (insertion order preserved since Python 3.7).
+- **Mutable**: you can add, change, or remove entries.
+- **Keys** must be hashable (e.g. strings, numbers, tuples).
+- **Values** can be any object.
 
 ```python
-d = {'a': 'alpha', 'b': 'bravo', 'c': 'charlie'}
-
-d.keys()     # dict_keys(['a', 'b', 'c'])
-d.values()   # dict_values(['alpha', 'bravo', 'charlie'])
-d.items()    # dict_items([('a', 'alpha'), ('b', 'bravo'), ('c', 'charlie')])
-```
-
----
-
-## Accessing and Modifying Dictionary Values
-
-### Reading a Value by Key
-
-```python
-theOne = {
-    "firstName": "Thomas",
-    "lastName": "Anderson",
-    "occupation": "Programmer"
+# Example: mixed key and value types
+info = {
+    "name": "Neo",
+    42: [1, 2, 3],
+    ("x","y"): {"nested": True}
 }
-
-theOne["company"] = "MetaCortex"
-
-print(theOne["firstName"])  # Output: Thomas
-```
-
-### Adding a New Key-Value Pair
-
-```python
-theOne["company"] = "MetaCortex"
-print(theOne)
-# Output:
-# {'firstName': 'Thomas', 'lastName': 'Anderson', 'occupation': 'Programmer', 'company': 'MetaCortex'}
-```
-
-### Changing the Value of an Existing Key
-
-```python
-theOne["occupation"] = "Superhero"
-print(theOne)
-# Output:
-# {'firstName': 'Thomas', 'lastName': 'Anderson', 'occupation': 'Superhero', 'company': 'MetaCortex'}
 ```
 
 ---
 
-## Looping Through a Dictionary
+## Creating Dictionaries
 
 ```python
-thedict = {'a': 'alpha', 'b': 'bravo', 'c': 'charlie'}
+# Literal syntax (most common)
+d1 = {'a': 1, 'b': 2}
 
-for key in thedict:
-    print(key, thedict[key])
-```
+# Built-in constructor from sequence of pairs
+d2 = dict([('x', 10), ('y', 20)])
 
-**Output:**
+# Keyword args
+d3 = dict(name="Alice", age=30)
 
-```
-a alpha
-b bravo
-c charlie
+# From two parallel lists
+keys   = ['red','green','blue']
+values = [1, 2, 3]
+d4     = dict(zip(keys, values))
+
+# Comprehension
+d5 = {n: n*n for n in range(5)}  # {0:0, 1:1, 2:4, 3:9, 4:16}
 ```
 
 ---
 
-## Specialized Dictionaries: `defaultdict` and `Counter`
+## Accessing Values
 
-The `collections` module includes enhanced dictionary types.
+```python
+d = {'first': 'a', 'second': 'b'}
+
+# Direct indexing (KeyError if missing)
+print(d['first'])         # a
+
+# Safe lookup with default
+print(d.get('third'))     # None
+print(d.get('third', 0))  # 0
+
+# Ensure a key exists with default
+x = d.setdefault('third', 'c')
+print(x)                  # c
+print(d)                  # {'first':'a','second':'b','third':'c'}
+```
 
 ---
+
+## Adding & Updating Entries
+
+```python
+d = {}
+
+# Simple assignment (adds or overwrites)
+d['a'] = 1
+d['a'] = 2              # overwrite
+print(d)                # {'a': 2}
+
+# Update multiple entries at once
+d.update({'b': 3, 'c': 4})
+print(d)                # {'a':2, 'b':3, 'c':4}
+
+# Merging into a new dict (Python 3.9+)
+d2 = {'c': 5, 'd': 6}
+merged = d | d2
+print(merged)           # {'a':2, 'b':3, 'c':5, 'd':6}
+```
+
+---
+
+## Removing Entries
+
+```python
+d = {'a':1, 'b':2, 'c':3}
+
+# Remove by key, return its value
+val = d.pop('b')
+print(val, d)           # 2, {'a':1, 'c':3}
+
+# Remove and return an arbitrary item
+item = d.popitem()
+print(item, d)          # e.g. ('c',3), {'a':1}
+
+# Delete by key
+del d['a']
+print(d)                # {}
+
+# Clear all entries
+d = {'x':1}
+d.clear()
+print(d)                # {}
+```
+
+---
+
+## Common Dictionary Methods
+
+| Method                  | Description                             | Example                                 |
+| ----------------------- | --------------------------------------- | --------------------------------------- |
+| `d.keys()`              | View of keys                            | `dict_keys(['a','b'])`                  |
+| `d.values()`            | View of values                          | `dict_values([1,2])`                    |
+| `d.items()`             | View of (key, value) pairs              | `dict_items([('a',1),('b',2)])`         |
+| `d.get(key[, default])` | Return `d[key]` or `default`            | `d.get('z', 0)` → `0`                   |
+| `d.setdefault(k, v)`    | `d[k]` if exists, else sets to `v`      | `d.setdefault('x', [])`                 |
+| `d.update(other)`       | Merge another mapping into `d`          | `d.update({'c':3})`                     |
+| `d.pop(key[, default])` | Remove `key`, return value or `default` | `d.pop('a')`                            |
+| `d.popitem()`           | Remove and return an arbitrary `(k,v)`  | `('c',3)`                               |
+| `d.clear()`             | Remove all items                        | `d.clear()` → `{}`                      |
+| `d.copy()`              | Shallow copy of the dict                | New dict object, same nested references |
+
+---
+
+## Iterating Over a Dictionary
+
+```python
+d = {'a':1, 'b':2, 'c':3}
+
+# Keys
+for k in d:
+    print(k)
+# a
+# b
+# c
+
+# Values
+for v in d.values():
+    print(v)
+# 1 2 3
+
+# Key-Value pairs
+for k, v in d.items():
+    print(k, v)
+# a 1
+# b 2
+# c 3
+```
+
+---
+
+## Dictionary Comprehensions
+
+```python
+# Invert a dict
+orig = {'a':1, 'b':2}
+inv = {v: k for k, v in orig.items()}
+print(inv)            # {1:'a', 2:'b'}
+
+# Filter items
+d = {'a':1, 'b':2, 'c':3}
+d2 = {k: v for k, v in d.items() if v % 2}
+print(d2)             # {'a':1, 'c':3}
+```
+
+---
+
+## Membership & Length
+
+```python
+d = {'x':10, 'y':20}
+
+print('x' in d)           # True
+print(10 in d.values())   # True
+print(len(d))             # 2
+```
+
+---
+
+## Specialized Dictionaries
 
 ### `defaultdict`
 
-- Automatically creates a default value for any key that doesn't yet exist
-- Requires a default function as its argument
+Automatically creates default values for missing keys.
 
 ```python
 from collections import defaultdict
 
-def default_list():
-    return []
-
-list_of_ips = defaultdict(default_list)
-
-list_of_ips['src#1'].append('dst')
-print(list_of_ips['src#2'])  # Outputs: []
-
-print(list_of_ips)
-# defaultdict(<function default_list>, {'src#1': ['dst'], 'src#2': []})
+dd = defaultdict(int)
+dd['count'] += 1
+print(dd)    # defaultdict(<class 'int'>, {'count':1})
 ```
-
----
 
 ### `Counter`
 
-- A subclass of `dict` that counts occurrences of each key
-- Useful methods: `.most_common(n)`, `.update()`, `.elements()`, `.subtract()`
+Counts occurrences of hashable items.
 
 ```python
-import requests
 from collections import Counter
 
-c = Counter()
-webcontent = requests.get('http://metasploit.com').text
-c.update(webcontent.lower().split())
+words = ["spam","eggs","spam","ham"]
+c = Counter(words)
+print(c)                # Counter({'spam':2,'eggs':1,'ham':1})
 
-print(c.most_common(6))
-# [('<a', 117), ('<div', 107), ('</div>', 103), ...]
+# Most common
+print(c.most_common(2)) # [('spam',2),('eggs',1)]
 ```
-
-### Cleaning the Counter
-
-```python
-for key in list(c.keys()):
-    if "<" in key or ">" in key or "=" in key:
-        del c[key]
-
-print(c.most_common(8))
-# [('security', 14), ('collapse', 13), ('the', 12), ...]
-```
-
----
-
-## Comparing Standard vs. `defaultdict` for Grouping Data
-
-Build a dictionary that groups destination IPs by source IPs.
-
-### Using Standard Dictionary
-
-```python
-hostdict = {}
-for src, dst in host_ip_tuples:
-    if src in hostdict:
-        hostdict[src].append(dst)
-    else:
-        hostdict[src] = [dst]
-```
-
-### Using `defaultdict`
-
-```python
-from collections import defaultdict
-
-hostdict = defaultdict(list)
-for src, dst in host_ip_tuples:
-    hostdict[src].append(dst)
-```
-
-The `defaultdict` version is shorter, cleaner, and avoids manual key checks.

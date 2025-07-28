@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Coding/Python/Syntax/Debugging.md",
+                "file": "Coding/Python/Syntax/Math.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Debugging"
+              "title": "Math"
             }
           }
         ]
@@ -206,8 +206,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f5bee28ecab57d88",
+  "active": "e5ac145c0df616f9",
   "lastOpenFiles": [
+    "Coding/Python/Syntax/Loops.md",
+    "Coding/Python/Syntax/Lists.md",
+    "Coding/Python/Syntax/Lambda.md",
+    "Coding/Python/Syntax/Function.md",
+    "Coding/Python/Syntax/File Operations.md",
+    "Coding/Python/Syntax/Dictionary.md",
+    "Coding/Python/Syntax/Debugging.md",
     "Coding/Python/Syntax/Control Statements.md",
     "Coding/Python/Pywars.md",
     "Coding/Python/Syntax/What is Python.md",
@@ -220,13 +227,6 @@
     "Coding/Python/Syntax/Name Spaces.md",
     "Coding/Python/Syntax/Modules.md",
     "Coding/Python/Syntax/Math.md",
-    "Coding/Python/Syntax/Loops.md",
-    "Coding/Python/Syntax/Lists.md",
-    "Coding/Python/Syntax/Lambda.md",
-    "Coding/Python/Syntax/Function.md",
-    "Coding/Python/Syntax/File Operations.md",
-    "Coding/Python/Syntax/Dictionary.md",
-    "Coding/Python/Syntax/Debugging.md",
     "File Transfer/Wget.md",
     "File Transfer/Netcat (nc).md",
     "File Transfer/Impacket.md",
