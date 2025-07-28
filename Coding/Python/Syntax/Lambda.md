@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - Lambda
 ---
 ## Overview
 

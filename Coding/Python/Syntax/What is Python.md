@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - WhatIsPython
 ---
 ## Introduction to Python
 - **Interpreted language**: Executes source code on the fly (just‑in‑time), without a separate compilation step.

@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - NameSpaces
 ---
 ## What Is a Namespace?
 

@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - Variables
 ---
 ## Name Lookup (LEGB)
 When you reference a variable, Python searches these namespaces **in order**:

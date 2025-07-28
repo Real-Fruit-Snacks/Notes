@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - Debugging
 ---
 ## Python Debugger (`pdb`) Overview
 

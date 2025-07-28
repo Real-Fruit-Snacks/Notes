@@ -1,6 +1,6 @@
 ---
 tags:
-  - wget
+  - Wget
   - FileTransfer
 ---
 

@@ -1,40 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "Math",
-      "path": "Coding/Python/Syntax/Math.md"
+      "basename": "Netcat (nc)",
+      "path": "File Transfer/Netcat (nc).md"
     },
     {
-      "basename": "Loops",
-      "path": "Coding/Python/Syntax/Loops.md"
-    },
-    {
-      "basename": "Lists",
-      "path": "Coding/Python/Syntax/Lists.md"
-    },
-    {
-      "basename": "Lambda",
-      "path": "Coding/Python/Syntax/Lambda.md"
-    },
-    {
-      "basename": "Function",
-      "path": "Coding/Python/Syntax/Function.md"
-    },
-    {
-      "basename": "File Operations",
-      "path": "Coding/Python/Syntax/File Operations.md"
-    },
-    {
-      "basename": "Dictionary",
-      "path": "Coding/Python/Syntax/Dictionary.md"
-    },
-    {
-      "basename": "Debugging",
-      "path": "Coding/Python/Syntax/Debugging.md"
-    },
-    {
-      "basename": "Control Statements",
-      "path": "Coding/Python/Syntax/Control Statements.md"
+      "basename": "Impacket",
+      "path": "File Transfer/Impacket.md"
     },
     {
       "basename": "Pywars",
@@ -73,16 +45,44 @@
       "path": "Coding/Python/Syntax/Modules.md"
     },
     {
+      "basename": "Math",
+      "path": "Coding/Python/Syntax/Math.md"
+    },
+    {
+      "basename": "Loops",
+      "path": "Coding/Python/Syntax/Loops.md"
+    },
+    {
+      "basename": "Lists",
+      "path": "Coding/Python/Syntax/Lists.md"
+    },
+    {
+      "basename": "Lambda",
+      "path": "Coding/Python/Syntax/Lambda.md"
+    },
+    {
+      "basename": "Function",
+      "path": "Coding/Python/Syntax/Function.md"
+    },
+    {
+      "basename": "File Operations",
+      "path": "Coding/Python/Syntax/File Operations.md"
+    },
+    {
+      "basename": "Dictionary",
+      "path": "Coding/Python/Syntax/Dictionary.md"
+    },
+    {
+      "basename": "Debugging",
+      "path": "Coding/Python/Syntax/Debugging.md"
+    },
+    {
+      "basename": "Control Statements",
+      "path": "Coding/Python/Syntax/Control Statements.md"
+    },
+    {
       "basename": "Wget",
       "path": "File Transfer/Wget.md"
-    },
-    {
-      "basename": "Netcat (nc)",
-      "path": "File Transfer/Netcat (nc).md"
-    },
-    {
-      "basename": "Impacket",
-      "path": "File Transfer/Impacket.md"
     },
     {
       "basename": "README",

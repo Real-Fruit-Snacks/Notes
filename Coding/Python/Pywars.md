@@ -1,7 +1,7 @@
 ---
 tags:
-  - python
-  - pywars
+  - Python
+  - PyWars
 ---
 ## Setup
 

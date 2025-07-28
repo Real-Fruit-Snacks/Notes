@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - Lists
 ---
 ## What Is a List?
 - **Ordered** collection: items stay in the order you put them.

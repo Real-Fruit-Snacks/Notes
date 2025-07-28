@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - Functions
 ---
 A function is a named block of reusable code that can accept inputs (arguments), perform operations, and return results. Functions help organize code, avoid repetition, and improve readability.
 

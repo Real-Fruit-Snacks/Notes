@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - Tuples
 ---
 An **immutable**, ordered sequence of elements. Tuples are like lightweight lists—ideal when you want a fixed collection of items.
 

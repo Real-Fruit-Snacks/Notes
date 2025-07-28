@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - VirtualEnvironment
 ---
 ## The `venv` Module
 The `venv` module (Python 3.6+) helps you create isolated Python environments. On Debian/Ubuntu you may need to install it first:

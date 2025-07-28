@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - Modules
 ---
 ## Installing & Managing Packages
 Python 3.4+ includes `pip` by default. If you ever need to bootstrap it:

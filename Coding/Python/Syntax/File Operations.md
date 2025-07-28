@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - FileOperations
 ---
 ## File Open Modes
 

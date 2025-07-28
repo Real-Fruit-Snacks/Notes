@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - ControlStatements
 ---
 ## What Are Control Statements?
 Control statements let your program choose which code blocks to run based on Boolean conditions. The primary conditional statements in Python are:

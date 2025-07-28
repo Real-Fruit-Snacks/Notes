@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - Math
 ---
 ## Basic Arithmetic Operators
 _Assume_ `x = 5`

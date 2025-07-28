@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - Dictionary
 ---
 ## What Is a Dictionary?
 

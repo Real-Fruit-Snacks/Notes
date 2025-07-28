@@ -1,6 +1,7 @@
 ---
 tags:
-  - python
+  - Python
+  - Strings
 ---
 ## String Basics
 A string is a sequence of characters (letters, digits, symbols, whitespace). In Python, strings are immutable and Unicode by default.
