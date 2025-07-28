@@ -112,7 +112,7 @@
       "enabled": false
     },
     "auto-correct-common-misspellings": {
-      "enabled": false,
+      "enabled": true,
       "ignore-words": "",
       "skip-words-with-multiple-capitals": false,
       "extra-auto-correct-files": []
@@ -152,19 +152,19 @@
       "double-quote-style": "\"\""
     },
     "remove-consecutive-list-markers": {
-      "enabled": false
+      "enabled": true
     },
     "remove-empty-list-markers": {
-      "enabled": false
+      "enabled": true
     },
     "remove-hyphenated-line-breaks": {
-      "enabled": false
+      "enabled": true
     },
     "remove-multiple-spaces": {
-      "enabled": false
+      "enabled": true
     },
     "strong-style": {
-      "enabled": false,
+      "enabled": true,
       "style": "consistent"
     },
     "two-spaces-between-lines-with-content": {
@@ -202,12 +202,12 @@
       "enabled": false
     },
     "heading-blank-lines": {
-      "enabled": true,
+      "enabled": false,
       "bottom": true,
       "empty-line-after-yaml": true
     },
     "line-break-at-document-end": {
-      "enabled": true
+      "enabled": false
     },
     "move-math-block-indicators-to-their-own-line": {
       "enabled": false
@@ -261,13 +261,13 @@
       "enabled": false
     },
     "remove-leading-or-trailing-whitespace-on-paste": {
-      "enabled": false
+      "enabled": true
     },
     "remove-leftover-footnotes-from-quote-on-paste": {
       "enabled": false
     },
     "remove-multiple-blank-lines-on-paste": {
-      "enabled": false
+      "enabled": true
     }
   },
   "lintOnSave": true,

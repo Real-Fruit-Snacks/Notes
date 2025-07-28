@@ -3,80 +3,127 @@ tags:
   - python
 ---
 
-## Create New Object
+Python provides multiple ways to read, write, and manage files using built-in functions and the `pathlib` and `os` modules.
 
-- `r` - Read-Only Mode
-- `w` - Write-Only Mode
-- `a` - Append Mode
-- `rb` - Read Binary and Do Not Interpret and Unicode or End of Lines
-- `rt` - (Default Mode) Read Text and Interpret Unicode Strings and \n or \r\n as End of Line
+---
 
-### Option 1
+## File Open Modes
+
+| Mode   | Description                                                                 |
+| ------ | --------------------------------------------------------------------------- |
+| `'r'`  | Read-only mode (file must exist)                                            |
+| `'w'`  | Write mode (creates or overwrites the file)                                 |
+| `'a'`  | Append mode (adds content to the end of file)                               |
+| `'rb'` | Read binary mode (reads file as bytes, no decoding or line ending handling) |
+| `'rt'` | Read text mode (default; interprets Unicode and line endings like `\n`)     |
+
+---
+
+## Opening a File
+
+### Option 1: Manual open and close
 
 ```python
-filehandle = open("complete file path", "<mode>")
+filehandle = open("complete_file_path", "<mode>")
+# Don't forget to call filehandle.close() when done
 ```
 
-### Option 2
+### Option 2: With context manager (recommended)
 
 ```python
-with open("complete file path", "<mode>") as file_handle:
+with open("complete_file_path", "<mode>") as file_handle:
+    # work with file_handle inside this block
+# File is automatically closed
 ```
 
-#### Reading Files (Examples)
+---
+
+## Reading from Files
+
+### Read line by line
 
 ```python
-# --- open --- #
-#Read one line at a time.
 filehandle = open('filename', 'r')
 for oneline in filehandle:
-    print(oneline, end = "")
+    print(oneline, end="")
 filehandle.close()
-#Read the entire file into a list.
+```
+
+### Read entire file into a list
+
+```python
 filehandle = open('filename', 'r')
-listoflines=filehandle.readlines()
+list_of_lines = filehandle.readlines()
 filehandle.close()
-#Read the entire file into a single string.
+```
+
+### Read entire file into a string
+
+```python
 filehandle = open('filename', 'r')
 content = filehandle.read()
 filehandle.close()
-# When reading binary data, always store it in bytes() or bytearray() by opening it with mode "b"
-# --- pathlib --- #
->>> content = pathlib.Path("/etc/passwd").read_text()
 ```
 
-#### Writing Files (Examples)
+> To read binary data, open the file with mode `'rb'` and store the result in `bytes()` or `bytearray()`.
+
+### Using `pathlib` to read a file
 
 ```python
-#Writing to the file (overwrite the contents)
+from pathlib import Path
+content = Path("/etc/passwd").read_text()
+```
+
+---
+
+## Writing to Files
+
+### Overwrite content with `'w'`
+
+```python
 filehandle = open('filename', 'w')
 filehandle.write("Write this one line.\n")
-filehandle.write(“Write these\nTwo lines\n”)
+filehandle.write("Write these\nTwo lines\n")
 filehandle.close()
-#Append to a file
+```
+
+### Append content with `'a'`
+
+```python
 filehandle = open('filename', 'a')
-filehandle.write("add this to the file")
+filehandle.write("Add this to the file")
 filehandle.close()
 ```
 
-#### Check for Existence of a file
+---
+
+## Checking if a File Exists
+
+You can use either `pathlib` or `os` to check for file existence.
 
 ```python
->>> pathlib.Path("/root/test.txt").is_file()
-False
->>> pathlib.Path("/root/test.txt").exists()
-False
->>> os.path.exists("/root/test.txt")
-False
+from pathlib import Path
+Path("/root/test.txt").is_file()   # False
+Path("/root/test.txt").exists()    # False
+
+import os
+os.path.exists("/root/test.txt")   # False
 ```
 
-#### Obtain a Listing of a Directory
+---
 
-- The glob() method will expand wildcards and show all matching files and directories
+## Listing Files in a Directory
+
+Use `pathlib.Path.glob()` to list matching files or directories.
 
 ```python
->>> xpath = pathlib.Path("/home/student/Documents/pythonclass/")
->>> list(xpath.glob("*.py"))
-# or use list comprehension to only see files
->>> [str(eachpath) for eachpath in xpath.glob("*") if eachpath.is_file()]
+from pathlib import Path
+
+xpath = Path("/home/student/Documents/pythonclass/")
+
+# List all Python files
+list(xpath.glob("*.py"))
+
+# List only files (not directories) using list comprehension
+[ str(p) for p in xpath.glob("*") if p.is_file() ]
 ```

@@ -2,60 +2,133 @@
 tags:
   - python
 ---
-
-## Installing Additional Modules
-
-The package manager, pip is installed by default on Python 3.4 and later. If you are on a Python system that doesn't have pip, you should first try to install it with the ensurepip module. This module will adapt the pip installation process to the OS and environment that Python is running on.
+## Installing & Managing Packages
+Python 3.4+ includes `pip` by default. If you ever need to bootstrap it:
 
 ```bash
-python -m ensurepip --default-pip
+python3 -m ensurepip --default-pip
 ```
 
-You can install packages from a local folder containing `setup.py`
+> **Tip:** It’s a good idea to keep `pip` itself up to date:
+>
+> ```bash
+> python3 -m pip install --upgrade pip
+> ```
+### Installing Packages
 
-```bash
-pip install .
-```
+| Source                   | Command                           | Notes                                         |
+| ------------------------ | --------------------------------- | --------------------------------------------- |
+| PyPI (online)            | `pip install <package>`           | e.g. `pip install requests`                   |
+| Upgrade an existing      | `pip install --upgrade <package>` |                                               |
+| From local folder        | `pip install .`                   | Runs the `setup.py` in your project directory |
+| From a requirements file | `pip install -r requirements.txt` | Pin your dependencies for reproducibility     |
+| List installed           | `pip list`                        |                                               |
+| Show package info        | `pip show <package>`              | Version, location, dependencies, etc.         |
+| Freeze versions          | `pip freeze > requirements.txt`   | Lock exact versions for deployment            |
 
-### What can I do with these modules?
+> **Best practice:**
+>
+> - Use virtual environments (venv/virtualenv) to isolate project dependencies.
+>     
+> - Check `python -m venv .venv` then `source .venv/bin/activate` (or Windows: `.venv\Scripts\activate`).
+>     
 
-```bash
-dir()  # lists all attributes and methods inside the object.
-help() # displays help for a given module, attribute, or method.
-type() # will tell you what kind of data you are dealing with
-```
+---
+## Inspecting & Exploring Modules
+Once a module is imported, these built‑ins help you explore what it offers:
 
-### Using Modules
-
-- How you refer to an object or function in a module depends on how you import the module.
-- If you use `import module`, you use module.function() when calling your function
-- If you use `from module import <function>`, you can use it as though it were defined in your program
+| Function    | Description                          | Example                |
+| ----------- | ------------------------------------ | ---------------------- |
+| `dir(obj)`  | List all attributes/methods on `obj` | `dir(math)`            |
+| `help(obj)` | Show documentation for `obj`         | `help(json.loads)`     |
+| `type(obj)` | Return the type/class of `obj`       | `type(datetime.now())` |
 
 ```python
-# Use module.function()
 import math
-math.add(1,2)
-# Use
-from math import add
-add(1,2)
+
+print(dir(math))         # shows ['acos', 'asin', ... , 'pi', 'tau']
+help(math.sqrt)          # displays signature and docstring
+print(type(math))        # <class 'module'>
 ```
 
-## codecs
+> **Tip:** Use `obj.__dict__` for a raw dict of an object’s namespace.
 
-### Encode and Decode
+---
+## Import Styles & Namespace
+How you import determines how you refer to names:
 
 ```python
->>> import codecs
->>> codecs.encode("Hello World","rot13")
-'Uryyb Jbeyq'
->>> codecs.encode(b"Hello World","HEX")
-'48656c6c6f20576f726c64'
->>> codecs.encode("Hello World","utf-16le")
-'H\x00e\x00l\x00l\x00o\x00 \x00W\x00o\x00r\x00l\x00d\x00'
->>> codecs.encode(b"Hello World","zip")
-'x\x9c\xf3H\xcd\xc9\xc9W\x08\xcf/\xcaI\x01\x00\x18\x0b\x04\x1d'
->>> codecs.encode(b"Hello World","base64")
-'SGVsbG8gV29ybGQ=\n'
->>> codecs.encode(codecs.encode("Hello World","rot13"),"rot13")
-'Hello World'
+# 1) Full module import — keeps namespace clear
+import math
+print(math.sqrt(16))
+
+# 2) Selective import — bring names into your scope
+from math import sqrt, pi
+print(sqrt(25), pi)
+
+# 3) Aliasing — shorten long names
+import numpy as np
+print(np.array([1,2,3]))
 ```
+
+> **Avoid** `from module import *` — it pollutes your namespace and makes it hard to see where names come from.
+
+---
+## The `codecs` Module: Encode & Decode
+`codecs` provides a uniform interface for many text and binary encodings.
+
+```python
+import codecs
+
+# Text → Rot13
+rot = codecs.encode("Hello World", "rot_13")
+print(rot)  
+# → 'Uryyb Jbeyq'
+
+# Bytes → Hex string
+hexed = codecs.encode(b"Hello World", "hex")
+print(hexed)  
+# → b'48656c6c6f20576f726c64'
+
+# Text → UTF‑16LE bytes
+utf16 = codecs.encode("Hello", "utf-16le")
+print(utf16)  
+# → b'H\x00e\x00l\x00l\x00o\x00'
+
+# Bytes → zlib‑compressed bytes
+z = codecs.encode(b"Hello World", "zip")
+print(z)  
+
+# Bytes → Base64 string
+b64 = codecs.encode(b"Hello World", "base64")
+print(b64)  
+# → b'SGVsbG8gV29ybGQ=\n'
+
+# Double‑decode Rot13
+original = codecs.encode(rot, "rot_13")
+print(original)  
+# → 'Hello World'
+```
+
+| Codec Name                | Purpose                             |
+| ------------------------- | ----------------------------------- |
+| `rot_13`                  | Simple letter‑rotation cipher       |
+| `hex`                     | Hexadecimal representation of bytes |
+| `base64`                  | Base64 text ↔ binary                |
+| `zip`                     | zlib compression                    |
+| `utf‑8`, `utf‑16le`, etc. | Standard Unicode encodings          |
+
+> **Decoding** is just as easy:
+>
+> ```python
+> back = codecs.decode(b64, "base64")
+> print(back)      # b'Hello World\n'
+> ```
+
+> **Tip:** For most text encodings, you can also use built‑ins:
+>
+> ```python
+> s = "café"
+> b = s.encode("utf-8")        # str → bytes
+> s2 = b.decode("utf-8")       # bytes → str
+> ```

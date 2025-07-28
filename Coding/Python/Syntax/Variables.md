@@ -2,41 +2,84 @@
 tags:
   - python
 ---
+## Name Lookup (LEGB)
+When you reference a variable, Python searches these namespaces **in order**:
 
-When a variable is referenced, Python searches for its value in the following namespaces:
-
-- **Locally**: In current function
-- **Enclosing**: In enclosing functions
-- **Globally**: A global variable
-- **Builtin**: In `Builtin` module where functions like print, input, and others are stored
-  If you want or need your function to be able to write to the global namespace, you can declare a variable to be global using the keyword `global`.
-
-## Big Numbers
-
-When you’re writing long numbers, you can group digits using underscores
-to make large numbers more readable:
+| Scope         | Description                                                     |
+| ------------- | --------------------------------------------------------------- |
+| **Local**     | Names defined in the current function                           |
+| **Enclosing** | Names in any outer (enclosing) function scopes                  |
+| **Global**    | Names defined at the top level of the module (file)             |
+| **Built‑in**  | Predefined names in the `builtins` module (e.g. `print`, `len`) |
 
 ```python
-universe_age = 14_000_000_000
+x = "global"
+
+def outer():
+    x = "enclosing"
+    def inner():
+        x = "local"
+        print(x)           # → "local" (found in Local)
+    inner()
+    print(x)               # → "enclosing" (found in Enclosing)
+
+outer()
+print(x)                   # → "global" (found in Global)
+print(len("abc"))          # → 3 (len from Built‑in)
 ```
 
+> **Writing to Globals:**
+> If you need to assign to a global name inside a function, declare it with `global`:
+>
+> ```python
+> count = 0
+> def inc():
+>     global count
+>     count += 1
+> ```
+
+---
+## Readable Big‑Number Literals
+You can place underscores between digits in integer and float literals to improve readability:
+
+```python
+universe_age = 14_000_000_000     # 14 billion
+price = 1_234.56                  # same as 1234.56
+```
+
+> Underscores are ignored by the parser—this is purely for human readability.
+
+---
 ## Multiple Assignment
-
-You can assign values to more than one variable using just a single line of
-code. This can help shorten your programs and make them easier to read;
-you’ll use this technique most often when initializing a set of numbers.
-For example, here’s how you can initialize the variables x, y, and z to zero:
+Assign multiple variables in one statement, using a comma‑separated tuple on the right:
 
 ```python
+# Initialize three counters to zero
 x, y, z = 0, 0, 0
+
+# Swap two variables without a temp
+a, b = 1, 2
+a, b = b, a       # now a==2, b==1
+
+# Unpack any iterable:
+coords = (10, 20, 30)
+x, y, z = coords
 ```
 
-## Constants
+> This packs the right‑hand values into a tuple, then unpacks them into the left‑hand names.
 
-Python doesn’t have built-in constant types, but Python program-
-mers use all capital letters to indicate a variable should be treated as a con-
-stant and never be changed:
+---
+## Constants by Convention
+Python has no built‑in “constant” type. By convention, names written in **ALL_CAPS** signal that they should not be reassigned:
 
 ```python
 MAX_CONNECTIONS = 5000
+DEFAULT_TIMEOUT = 30  # seconds
+
+def connect():
+    # …use MAX_CONNECTIONS and DEFAULT_TIMEOUT…
+    pass
 ```
+
+> Following this convention makes your code clearer to readers and tools (linters) that might warn on reassignment.
+

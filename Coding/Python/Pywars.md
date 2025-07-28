@@ -3,7 +3,6 @@ tags:
   - python
   - pywars
 ---
-
 ## Setup
 
 ```bash

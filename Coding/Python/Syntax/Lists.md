@@ -2,200 +2,161 @@
 tags:
   - python
 ---
+A **list** in Python is an **ordered**, **mutable** collection of items. Lists can hold any type of object, including other lists.
 
-> Lists are an indexed group of objects.
+---
 
-- Define with square brackets `[]`
-- Empty List = `[]`, `list()`
-- List of Names = `['Alice', 'Bob', 'Eve']`
-    - Elements in the list are addressed based on their index in the list
-- First item in the list of names, `list_of_names[0]`
-    - Items in lists can contain a number, string, or any Python object, including other lists
-- Items in the list can be overwritten (it is mutable)
+## List Basics
+- **Defined using** square brackets: `[]`
+- **Create empty list**: `[]` or `list()`
+- **Lists are zero-indexed** (first element is at index 0)
+- **Mutable**: items can be changed after creation
+- **Flexible**: can contain mixed data types
+### Example
+```python
+names = ['Alice', 'Bob', 'Eve']
+names[0]  # Output: 'Alice'
+```
 
-## List Elements
+---
 
-List items must be assigned when the list is created or with the `append()`method
+## Creating and Modifying Lists
 
 ```python
-# Create list
-newlist = ['A','B','C']
+newlist = ['A', 'B', 'C']
 
-# Add to list
-newlist[3]="D"
-# or 
+# Overwrite an index
+newlist[2] = "Z"
+
+# Append to the end
 newlist.append("D")
 ```
 
-## List Methods
+---
 
-- `list[index] = value`: Change an existing value
-- `append(value)`: Add an object to the end of the list
-- `insert(position, value)`: Insert the value at the given position in the list.
-    - Position is a positive or negative number
-- `remove(value)`: Remove the first matching item by its value
-- `sort(key,direction)`: Sort the elements of the list
-- `count(value)`: Count occurrences of an item in the list
-- `index(value)`: Look up where a value is in the list
-- `del list[index]`: Delete an item by its index
+## Common List Methods
+
+| Method                 | Description                       |
+| ---------------------- | --------------------------------- |
+| `append(value)`        | Add value to the end              |
+| `insert(index, value)` | Insert value at specific position |
+| `remove(value)`        | Remove first occurrence of value  |
+| `del list[index]`      | Delete element by index           |
+| `list[index] = value`  | Overwrite element at index        |
+| `index(value)`         | Get index of first occurrence     |
+| `count(value)`         | Count number of occurrences       |
+| `sort()`               | Sort list in place                |
+| `reverse()`            | Reverse the order of the list     |
+
+### Example
 
 ```python
-# Examples
->>> movies=["Life of Brian","Meaning of Life"]
->>> movies.index("Meaning of Life")
-1
+movies = ["Life of Brian", "Meaning of Life"]
 
->>> movies.insert(1,"Holy Grail")
->>> movies
-['Life of Brian', 'Holy Grail', 'Meaning of Life']
->>> movies.index("Meaning of Life")
-2
-
->>> movies[2]
-'Meaning of Life'
->>> movies.append("Free Willie")
->>> movies
-['Life of Brian', 'Holy Grail', 'Meaning of Life', 'Free Willie']
->>> movies.remove("Free Willie")
->>> movies
-['Life of Brian', 'Holy Grail', 'Meaning of Life']
->>> movies.insert(0,"Secret Policemans ball")
->>> movies
-['Secret Policemans ball', 'Life of Brian', 'Holy Grail', 'Meaning of Life']
->>> movies.remove("Secret Policemans ball")
->>> movies
-['Life of Brian', 'Holy Grail', 'Meaning of Life']
->>> movies.reverse()
->>> movies
-['Meaning of Life', 'Holy Grail', 'Life of Brian']
->>> del movies[0]
->>> movies
-['Holy Grail', 'Life of Brian']
+movies.index("Meaning of Life")      # Output: 1
+movies.insert(1, "Holy Grail")
+movies.append("Free Willie")
+movies.remove("Free Willie")
+movies.reverse()
+del movies[0]
 ```
 
-## Add Item to List
+---
 
-```bash
-kali@kali:~$ cat listTest3.py
-#!/usr/bin/python
+## Adding Items to a List
 
+```python
 fruitList = ["apple", "banana", "orange"]
 fruitList.append("mango")
 
 print(fruitList)
-
-kali@kali:~$ python listTest3.py
-["apple", "banana", "orange", "mango"]
+# Output: ['apple', 'banana', 'orange', 'mango']
 ```
 
-## Remove Item from List
+---
 
-```bash
-kali@kali:~$ cat listTest4.py
-#!/usr/bin/python
+## Removing Items from a List
 
+```python
 fruitList = ["apple", "banana", "orange", "mango"]
 fruitList.remove("mango")
 
 print(fruitList)
-
-kali@kali:~$ python listTest4.py
-["apple", "banana", "orange"]
+# Output: ['apple', 'banana', 'orange']
 ```
 
-## Adding and Removing Items from a List
+---
+
+## List References vs. Copies
 
 ```python
->>> alist = ['elements', 'in a list', 500, 4.2999999998]
->>> blist = alist
->>> blist.append("Add this to list")
->>> blist
-['elements', 'in a list', 500, 4.2999999998, 'Add this to list']
->>> alist
-['elements', 'in a list', 500, 4.2999999998, 'Add this to list']
->>> clist=list(alist)
->>> clist.remove(500)
->>> clist
-['elements', 'in a list', 4.2999999998, 'Add this to the list']
->>> alist
-['elements', 'in a list', 500, 4.2999999998, 'Add this to list']
->>> alist = ['elements', 'in a list', 500, 4.2999999998]
+alist = ['elements', 'in a list', 500, 4.29]
+
+# blist refers to the same list as alist
+blist = alist
+blist.append("New Item")
+
+# Create a shallow copy
+clist = list(alist)
+clist.remove(500)
+
+# Modify alist separately
 del alist[0]
-alist
-['in a list', 500, 4.2999999998]
 ```
 
-## Converting Strings to Lists with .split()
+---
 
-- The string split() method converts a string to a list
-- Provided with no arguments, it splits on white space
-- Given an argument, it splits on that string
+## String and List Conversion
+### Splitting Strings into Lists with `.split()`
 
 ```python
->>> "THIS IS A STRING CONVERTED TO A LIST".split()
-['THIS', 'IS', 'A', 'STRING', 'CONVERTED', 'TO', 'A', 'LIST']
->>> "'comma','delimited','1.2'".split(",")
-["'comma'", "'delimited'", "'1.2'"]
->>> "THIS IS A LIST WITH IS IN IT".split("IS")
-['TH', ' ', ' A L', 'T WITH ', ' IN IT']
+"ONE TWO THREE".split()             # ['ONE', 'TWO', 'THREE']
+"'a','b','c'".split(",")            # ["'a'", "'b'", "'c'"]
+"HELLO_WORLD".split("_")           # ['HELLO', 'WORLD']
+```
+### Joining Lists into Strings with `.join()`
+```python
+" ".join(["Python", "is", "fun"])  # 'Python is fun'
+",".join(["a", "b", "c"])          # 'a,b,c'
+"".join(["abc", "123"])            # 'abc123'
 ```
 
-## Convert Lists to Strings with .join()
+---
 
-- The string `.join()` method can convert a list of strings to a string.
-    - **Note**: The list must contain only strings
-- The string whose method is being called is used as a separator between each element in the list
-- A "" (null) or " " (space) string is often used to seamlessly join list elements together into a new string
+## Sorting Lists
+You can sort lists either in place or by generating a new sorted copy.
 
+| Method         | Description                      |
+| -------------- | -------------------------------- |
+| `list.sort()`  | Sorts the list in place          |
+| `sorted(list)` | Returns a new sorted list        |
+| `reverse=True` | Sort in reverse order (optional) |
+| `key=function` | Use custom logic for sorting     |
+### Example
 ```python
->>> " ".join(["SEC573","is","awesome!"])
-'SEC573 is awesome!'
->>> ",".join(["Make","a","csv"])
-'Make,a,csv'
->>> "".join(["SEC573","is","awesome!"])
-'SEC573isawesome!'
+customers = ["Mike Passel", "alice Passel", "danielle Clayton"]
+
+# Case-insensitive sort
+sorted(customers, key=lambda name: name.lower())
+
+# Sort by last name first
+def lastfirst(name):
+    first, last = name.split()
+    return (last + first).lower()
+
+sorted(customers, key=lastfirst)
 ```
 
-## Sorting Lists with list.sort() and sorted()
+---
 
-**Python provides two ways to sort lists:**
-
-- `list.sort()` method: Sorts the list in place, modifying the list
-- built-in `sorted()` function: Creates a sorted copy of the list
-- Passing (reverse=True) to either function sorts in reverse order
-- Both methods can optionally accept a “key” function, which produces an element to sort on
-
+## List Comprehensions
+List comprehensions offer a concise syntax for creating or transforming lists.
+### Examples
 ```python
->>> customers=["Mike Passel","alice Passel", "danielle Clayton"]
->>> sorted(customers)
-['Mike Passel', 'alice Passel', 'danielle Clayton']
->>> def lowercase(fullname):
-...   return fullname.lower()
-...
->>> sorted(customers, key=lowercase)
-['alice Passel', 'danielle Clayton', 'Mike Passel']
->>> def lastfirst(fullname):
-...   return (fullname.split()[1]+fullname.split()[0]).lower()
-...
->>> lastfirst("FNAME LNAME")
-'lnamefname'
->>> sorted(customers, key=lastfirst)
-['danielle Clayton', 'alice Passel', 'Mike Passel']
-```
-
-## List Examples
-
-```python
->>> [a for a in [1,2,3,4]]
-[1, 2, 3, 4]
->>> [a for a in [1,2,3,4] if a > 2 ]
-[3, 4]
->>> [a*2 for a in [1,2,3,4] if a > 2 ]
-[6, 8]
->>> [int(a) for a in "1 2 3 4".split()]
-[1, 2, 3, 4]
->>> [x for x,y in [("a",4),("b",2),("c",7)]]
-['a', 'b', 'c']
->>> [(lambda x:x.upper())(x) for x in "make upper"]
-['M', 'A', 'K', 'E', ' ', 'U', 'P', 'P', 'E', 'R']
+[a for a in [1, 2, 3, 4]]                        # [1, 2, 3, 4]
+[a for a in [1, 2, 3, 4] if a > 2]               # [3, 4]
+[a * 2 for a in [1, 2, 3, 4] if a > 2]           # [6, 8]
+[int(a) for a in "1 2 3 4".split()]              # [1, 2, 3, 4]
+[x for x, y in [("a", 4), ("b", 2), ("c", 7)]]   # ['a', 'b', 'c']
+[(lambda x: x.upper())(x) for x in "make upper"]# ['M', 'A', 'K', 'E', ' ', 'U', 'P', 'P', 'E', 'R']
 ```

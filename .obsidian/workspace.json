@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Coding/Python/Syntax/Lists.md",
+                "file": "Coding/Python/Syntax/Debugging.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lists"
+              "title": "Debugging"
             }
           }
         ]
@@ -193,8 +193,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,35 +206,35 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e5ac145c0df616f9",
+  "active": "f5bee28ecab57d88",
   "lastOpenFiles": [
-    "Coding/Python/Syntax/Strings.md",
+    "Coding/Python/Syntax/Control Statements.md",
+    "Coding/Python/Pywars.md",
+    "Coding/Python/Syntax/What is Python.md",
+    "Coding/Python/Syntax/Virtual Environment.md",
     "Coding/Python/Syntax/Variables.md",
+    "Coding/Python/Syntax/Tuples.md",
+    "Coding/Python/Syntax/Strings.md",
+    "Coding/Python/Syntax/Syntax.md",
+    "Coding/Python/Syntax/Regular Expressions.md",
+    "Coding/Python/Syntax/Name Spaces.md",
+    "Coding/Python/Syntax/Modules.md",
     "Coding/Python/Syntax/Math.md",
+    "Coding/Python/Syntax/Loops.md",
+    "Coding/Python/Syntax/Lists.md",
+    "Coding/Python/Syntax/Lambda.md",
+    "Coding/Python/Syntax/Function.md",
+    "Coding/Python/Syntax/File Operations.md",
+    "Coding/Python/Syntax/Dictionary.md",
+    "Coding/Python/Syntax/Debugging.md",
     "File Transfer/Wget.md",
     "File Transfer/Netcat (nc).md",
     "File Transfer/Impacket.md",
     "README.md",
     "File Transfer",
-    "Coding/Python/Syntax/Control Statements.md",
-    "Coding/Python/Syntax/What is Python.md",
-    "Coding/Python/Syntax/Virtual Environment.md",
-    "Coding/Python/Syntax/Tuples.md",
-    "Coding/Python/Syntax/Regular Expressions.md",
     "Coding/Python/Syntax.md",
-    "Coding/Python/Syntax/File Operations.md",
-    "Coding/Python/Syntax/Lambda.md",
-    "Coding/Python/Syntax/Dictionary.md",
-    "Coding/Python/Syntax/Loops.md",
-    "Coding/Python/Syntax/Lists.md",
-    "Coding/Python/Syntax/Modules.md",
-    "Coding/Python/Syntax/Debugging.md",
-    "Coding/Python/Syntax/Syntax.md",
-    "Coding/Python/Syntax/Function.md",
-    "Coding/Python/Syntax/Name Spaces.md",
     "Coding/Python/Syntax",
     "Attachments",
-    "Coding/Python/Pywars.md",
     "Coding/Python/Offsense",
     "Coding/Python/Forensics",
     "Coding/Python/Defense",
