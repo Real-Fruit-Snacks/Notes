@@ -5,6 +5,10 @@
       "path": "File Transfer/Netcat (nc).md"
     },
     {
+      "basename": "Wget",
+      "path": "File Transfer/Wget.md"
+    },
+    {
       "basename": "Impacket",
       "path": "File Transfer/Impacket.md"
     },
@@ -79,10 +83,6 @@
     {
       "basename": "Control Statements",
       "path": "Coding/Python/Syntax/Control Statements.md"
-    },
-    {
-      "basename": "Wget",
-      "path": "File Transfer/Wget.md"
     },
     {
       "basename": "README",
