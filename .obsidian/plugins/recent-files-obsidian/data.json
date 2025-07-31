@@ -37,18 +37,6 @@
       "path": "Coding/Python/Syntax/What is Python.md"
     },
     {
-      "basename": "Impacket",
-      "path": "File Transfer/Impacket.md"
-    },
-    {
-      "basename": "Netcat (nc)",
-      "path": "File Transfer/Netcat (nc).md"
-    },
-    {
-      "basename": "Wget",
-      "path": "File Transfer/Wget.md"
-    },
-    {
       "basename": "Pywars",
       "path": "Coding/Python/Pywars.md"
     },

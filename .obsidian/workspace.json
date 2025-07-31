@@ -11,14 +11,10 @@
             "id": "e5ac145c0df616f9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Coding/Python/Syntax/Lists.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Lists"
+              "title": "New tab"
             }
           }
         ]
@@ -207,8 +203,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f5bee28ecab57d88",
+  "active": "e5ac145c0df616f9",
   "lastOpenFiles": [
+    "File Transfer/Impacket.md",
+    "File Transfer/Wget.md",
+    "File Transfer/Netcat (nc).md",
+    "Coding/Python/Syntax/Lists.md",
     "Active Directory",
     "Coding/Python/Syntax/Loops.md",
     "Coding/Python/Syntax/Modules.md",
@@ -218,13 +218,9 @@
     "Coding/Python/Syntax/Variables.md",
     "Coding/Python/Syntax/Virtual Environment.md",
     "Coding/Python/Syntax/What is Python.md",
-    "File Transfer/Impacket.md",
-    "File Transfer/Netcat (nc).md",
-    "File Transfer/Wget.md",
     "Coding/Python/Pywars.md",
     "Coding/Python/Syntax/Name Spaces.md",
     "Coding/Python/Syntax/Math.md",
-    "Coding/Python/Syntax/Lists.md",
     "Coding/Python/Syntax/Lambda.md",
     "Coding/Python/Syntax/Function.md",
     "Coding/Python/Syntax/File Operations.md",
@@ -243,7 +239,6 @@
     "Coding/Python",
     "Coding",
     "notes/Coding/Python/Pywars.md",
-    "notes/Coding/Python/Forensics",
-    "notes/Coding/Python/Offense"
+    "notes/Coding/Python/Forensics"
   ]
 }
