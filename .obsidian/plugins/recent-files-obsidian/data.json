@@ -1,6 +1,42 @@
 {
   "recentFiles": [
     {
+      "basename": "Lists",
+      "path": "Coding/Python/Syntax/Lists.md"
+    },
+    {
+      "basename": "Loops",
+      "path": "Coding/Python/Syntax/Loops.md"
+    },
+    {
+      "basename": "Modules",
+      "path": "Coding/Python/Syntax/Modules.md"
+    },
+    {
+      "basename": "Regular Expressions",
+      "path": "Coding/Python/Syntax/Regular Expressions.md"
+    },
+    {
+      "basename": "Strings",
+      "path": "Coding/Python/Syntax/Strings.md"
+    },
+    {
+      "basename": "Tuples",
+      "path": "Coding/Python/Syntax/Tuples.md"
+    },
+    {
+      "basename": "Variables",
+      "path": "Coding/Python/Syntax/Variables.md"
+    },
+    {
+      "basename": "Virtual Environment",
+      "path": "Coding/Python/Syntax/Virtual Environment.md"
+    },
+    {
+      "basename": "What is Python",
+      "path": "Coding/Python/Syntax/What is Python.md"
+    },
+    {
       "basename": "Impacket",
       "path": "File Transfer/Impacket.md"
     },
@@ -17,48 +53,12 @@
       "path": "Coding/Python/Pywars.md"
     },
     {
-      "basename": "What is Python",
-      "path": "Coding/Python/Syntax/What is Python.md"
-    },
-    {
-      "basename": "Virtual Environment",
-      "path": "Coding/Python/Syntax/Virtual Environment.md"
-    },
-    {
-      "basename": "Variables",
-      "path": "Coding/Python/Syntax/Variables.md"
-    },
-    {
-      "basename": "Tuples",
-      "path": "Coding/Python/Syntax/Tuples.md"
-    },
-    {
-      "basename": "Strings",
-      "path": "Coding/Python/Syntax/Strings.md"
-    },
-    {
-      "basename": "Regular Expressions",
-      "path": "Coding/Python/Syntax/Regular Expressions.md"
-    },
-    {
       "basename": "Name Spaces",
       "path": "Coding/Python/Syntax/Name Spaces.md"
     },
     {
-      "basename": "Modules",
-      "path": "Coding/Python/Syntax/Modules.md"
-    },
-    {
       "basename": "Math",
       "path": "Coding/Python/Syntax/Math.md"
-    },
-    {
-      "basename": "Loops",
-      "path": "Coding/Python/Syntax/Loops.md"
-    },
-    {
-      "basename": "Lists",
-      "path": "Coding/Python/Syntax/Lists.md"
     },
     {
       "basename": "Lambda",

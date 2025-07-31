@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "File Transfer/Impacket.md",
+                "file": "Coding/Python/Syntax/Lists.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Impacket"
+              "title": "Lists"
             }
           }
         ]
@@ -193,7 +193,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 471.5
+    "width": 201.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -206,22 +207,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e5ac145c0df616f9",
+  "active": "f5bee28ecab57d88",
   "lastOpenFiles": [
+    "Active Directory",
+    "Coding/Python/Syntax/Loops.md",
+    "Coding/Python/Syntax/Modules.md",
+    "Coding/Python/Syntax/Regular Expressions.md",
+    "Coding/Python/Syntax/Strings.md",
+    "Coding/Python/Syntax/Tuples.md",
+    "Coding/Python/Syntax/Variables.md",
+    "Coding/Python/Syntax/Virtual Environment.md",
+    "Coding/Python/Syntax/What is Python.md",
+    "File Transfer/Impacket.md",
     "File Transfer/Netcat (nc).md",
     "File Transfer/Wget.md",
-    "File Transfer/Impacket.md",
     "Coding/Python/Pywars.md",
-    "Coding/Python/Syntax/What is Python.md",
-    "Coding/Python/Syntax/Virtual Environment.md",
-    "Coding/Python/Syntax/Variables.md",
-    "Coding/Python/Syntax/Tuples.md",
-    "Coding/Python/Syntax/Strings.md",
-    "Coding/Python/Syntax/Regular Expressions.md",
     "Coding/Python/Syntax/Name Spaces.md",
-    "Coding/Python/Syntax/Modules.md",
     "Coding/Python/Syntax/Math.md",
-    "Coding/Python/Syntax/Loops.md",
     "Coding/Python/Syntax/Lists.md",
     "Coding/Python/Syntax/Lambda.md",
     "Coding/Python/Syntax/Function.md",
@@ -241,7 +243,6 @@
     "Coding/Python",
     "Coding",
     "notes/Coding/Python/Pywars.md",
-    "notes/Coding/Python/Syntax.md",
     "notes/Coding/Python/Forensics",
     "notes/Coding/Python/Offense"
   ]
