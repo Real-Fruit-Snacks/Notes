@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "File Operations",
+      "path": "Coding/Python/Syntax/File Operations.md"
+    },
+    {
       "basename": "Lists",
       "path": "Coding/Python/Syntax/Lists.md"
     },
@@ -55,10 +59,6 @@
     {
       "basename": "Function",
       "path": "Coding/Python/Syntax/Function.md"
-    },
-    {
-      "basename": "File Operations",
-      "path": "Coding/Python/Syntax/File Operations.md"
     },
     {
       "basename": "Dictionary",
