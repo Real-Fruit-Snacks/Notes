@@ -2,7 +2,6 @@
 tags:
   - Python
   - Practice
-  - Basics
 creation_date: 2025-08-04
 ---
 ## Instructions
