@@ -1,12 +1,28 @@
 {
   "recentFiles": [
     {
-      "basename": "Currency Exchange",
-      "path": "Coding/Python/Practice/Currency Exchange.md"
+      "basename": "Credentials",
+      "path": "Machines and Rooms/TryHackMe/Enumerating Active Directory/Credentials.md"
+    },
+    {
+      "basename": "Walkthrough",
+      "path": "Machines and Rooms/TryHackMe/Enumerating Active Directory/Walkthrough.md"
+    },
+    {
+      "basename": "External",
+      "path": "Active Directory/Enumeration/External.md"
     },
     {
       "basename": "Ghost Gobble Arcade Game",
       "path": "Coding/Python/Practice/Ghost Gobble Arcade Game.md"
+    },
+    {
+      "basename": "Setting Up Kali Linux",
+      "path": "Kali/Setting Up Kali Linux.md"
+    },
+    {
+      "basename": "Currency Exchange",
+      "path": "Coding/Python/Practice/Currency Exchange.md"
     },
     {
       "basename": "Meltdown Mitigations",

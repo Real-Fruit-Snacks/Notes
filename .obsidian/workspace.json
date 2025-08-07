@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e5ac145c0df616f9",
+            "id": "4699557f36b7b15e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Coding/Python/Practice/Ghost Gobble Arcade Game.md",
+                "file": "Machines and Rooms/TryHackMe/Enumerating Active Directory/Walkthrough.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ghost Gobble Arcade Game"
-            }
-          },
-          {
-            "id": "b9a51a0b834d3649",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Coding/Python/Practice/Currency Exchange.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Currency Exchange"
+              "title": "Walkthrough"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -111,7 +96,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 292.5
   },
   "right": {
     "id": "a60215fdf86b9490",
@@ -208,8 +193,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 201.5,
-    "collapsed": true
+    "width": 201.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,19 +206,34 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b9a51a0b834d3649",
+  "active": "f5bee28ecab57d88",
   "lastOpenFiles": [
-    "Coding/Python/Practice/Meltdown Mitigations.md",
-    "Coding/Python/Practice/Currency Exchange.md",
-    "Coding/Python/Practice/Guido's Gorgeous Lasagna.md",
+    "Attachments/Machines and Rooms/TryHackMe/Enumerating Active Directory/Walkthrough",
+    "Attachments/Enumerating Active Directory/Walkthrough",
+    "Attachments/Enumerating Active Directory",
+    "Machines and Rooms/TryHackMe/Enumerating Active Directory/Credentials.md",
+    "Machines and Rooms/TryHackMe/Enumerating Active Directory/THMJMP1/Access.md",
+    "Machines and Rooms/TryHackMe/Enumerating Active Directory/Walkthrough.md",
+    "Attachments/Machines and Rooms/TryHackMe/Enumerating Active Directory/THMJMP1/Access",
+    "Attachments/Machines and Rooms/TryHackMe/Enumerating Active Directory/THMJMP1",
+    "Attachments/Machines and Rooms/TryHackMe/Enumerating Active Directory",
+    "Attachments/Machines and Rooms/TryHackMe",
+    "Attachments/Machines and Rooms",
+    "Attachments/Machines and Rooms/TryHackMe/Enumerating Active Directory/Walkthrough/IMG-202508062139.png",
+    "Machines and Rooms/TryHackMe/Enumerating Active Directory/THMJMP1",
+    "Active Directory/Enumeration/External.md",
     "Coding/Python/Practice/Ghost Gobble Arcade Game.md",
+    "Machines and Rooms/TryHackMe/Enumerating Active Directory",
+    "Machines and Rooms/TryHackMe",
+    "Kali/Setting Up Kali Linux.md",
+    "Coding/Python/Practice/Currency Exchange.md",
+    "Coding/Python/Practice/Meltdown Mitigations.md",
+    "Coding/Python/Practice/Guido's Gorgeous Lasagna.md",
     "Coding/Python/Syntax/File Operations.md",
-    "Coding/Python/Practice",
     "File Transfer/Impacket.md",
     "File Transfer/Wget.md",
     "File Transfer/Netcat (nc).md",
     "Coding/Python/Syntax/Lists.md",
-    "Active Directory",
     "Coding/Python/Syntax/Loops.md",
     "Coding/Python/Syntax/Modules.md",
     "Coding/Python/Syntax/Regular Expressions.md",
@@ -245,20 +244,6 @@
     "Coding/Python/Syntax/What is Python.md",
     "Coding/Python/Pywars.md",
     "Coding/Python/Syntax/Name Spaces.md",
-    "Coding/Python/Syntax/Math.md",
-    "Coding/Python/Syntax/Lambda.md",
-    "Coding/Python/Syntax/Function.md",
-    "Coding/Python/Syntax/Dictionary.md",
-    "Coding/Python/Syntax/Debugging.md",
-    "Coding/Python/Syntax/Control Statements.md",
-    "Coding/Python/Syntax/Syntax.md",
-    "File Transfer",
-    "Coding/Python/Syntax",
-    "Attachments",
-    "Coding/Python/Offsense",
-    "Coding/Python/Forensics",
-    "Coding/Python/Defense",
-    "Coding/Python",
-    "Coding"
+    "Coding/Python/Syntax/Math.md"
   ]
 }
