@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "072896c6140fa645",
+        "id": "2f77e76d932b1812",
         "type": "tabs",
         "children": [
           {
-            "id": "4699557f36b7b15e",
+            "id": "d5ea545f43200ad6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machines and Rooms/TryHackMe/Enumerating Active Directory/Walkthrough.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Walkthrough"
+              "title": "New tab"
             }
           }
         ]
@@ -206,7 +202,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f5bee28ecab57d88",
+  "active": "1188d40be0f2ddc9",
   "lastOpenFiles": [
     "Attachments/Machines and Rooms/TryHackMe/Enumerating Active Directory/Walkthrough",
     "Attachments/Enumerating Active Directory/Walkthrough",
